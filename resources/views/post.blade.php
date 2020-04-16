@@ -16,8 +16,9 @@
 		@foreach($posts as $GetPost)
 		<div class="col-md-3">
 				
+					<span>{{ $GetPost->id }}</span>
 					<span>{{ $GetPost->title }}</span>
-
+					<span>{{ $GetPost->slug }}</span>
 			</div>
 		@endforeach
 		</div>
