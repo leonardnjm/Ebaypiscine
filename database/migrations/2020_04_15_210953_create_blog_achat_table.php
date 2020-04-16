@@ -15,11 +15,11 @@ class CreateBlogAchatTable extends Migration
     {
         Schema::create('blog_achat', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('nom');
+            $table->text('description');
+            $table->integer('prix');
             $table->timestamps();
-            $table->string('titre', 255); // Création d'un champ texte 'titre' de 255 caractères
-            $table->longText('contenu'); // Création d'un champ texte long 'contenu'
-            $table->date('date_article');
-  // Création d'un champ 'date_article' de type date
         });
     }
 

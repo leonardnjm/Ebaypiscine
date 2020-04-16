@@ -49,12 +49,14 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+
+
                         @else
                             <li class="nav-item dropdown">
                                 @auth
                                 <a class="nav-link" href="{{ url('/post') }}">{{ __('acheter') }}</a>
                                 @endauth
-                                 <a class="nav-link" href="{{ url('/test') }}">{{ __('vendre') }}</a>
+                                 <a class="nav-link" href="{{ url('/formulaire') }}">{{ __('vendre') }}</a>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

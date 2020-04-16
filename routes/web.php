@@ -28,5 +28,15 @@ Route::get('/test',function() {
 
 return view('test');
 });
+Route::get('/devices','DevicesController@index');
+ 
+Route::get('/devices/create','DevicesController@create');
+ 
+Route::post('/devicesaction','DevicesController@storeDevice');
 
 
+//test formulaire
+Route::view('formulaire','userview');
+
+
+route::post('submit','Ventes@save');
