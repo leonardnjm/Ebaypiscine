@@ -14,8 +14,7 @@ Le registre fossile des animaux est dominé par l'explosion cambrienne (−541 �
 
 Les animaux complexes sont cependant apparus au moins des dizaines de millions d'années auparavant, sans doute pendant l'Édiacarien (−635 à −541 Ma). Les fossiles les plus anciens ont été trouvés à Terre-Neuve et datent d'environ 571 Ma, mais le biote édiacarien est resté peu diversifié jusque vers −560 Ma. Les premières traces de l'existence d'animaux sont plus anciennes encore (−650 Ma dans le supergroupe de Huqf en Oman, −635 Ma dans la formation de Lantian en Chine méridionale), mais reposent sur des biomarqueurs comme le stérane ou sur des empreintes mal identifiables, et sont contestées4.
 
-Zoologie
-Physiologie commune
+
 
 L' « Animal théorique » du zoologiste Paul Bert (1833-1886), proposé au xixe siècle comme modèle fictif et pédagogique présentant les systèmes associés qui caractérisent selon lui l'organisme animal5 :
 D : appareil digestif,
