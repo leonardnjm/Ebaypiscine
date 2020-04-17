@@ -25,14 +25,20 @@
     <style>
         html,
         body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
+            background-color: #ffffff;
+            color: #414141;
+            font-family: 'Nunit!o', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
         }
-
+        
+        footer{
+            
+            color: #b7b7b7;
+            font-weight: 200;
+             
+        }
         .full-height {
             height: 100vh;
         }
@@ -71,9 +77,9 @@
             text-transform: uppercase;
         }
 
-        .m-b-md {
-            margin-bottom: 30px;
-        }
+
+        .container-fluid {
+            background-color: #1b1821;        }
 
     </style>
 </head>
@@ -90,7 +96,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <!-- Left Side Of Navbar -->
-                        @auth
+                    @auth
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/post">{{ __('acheter') }}</a>
@@ -122,7 +128,7 @@
                             </form>
                         </li>
                     </ul>
-                        @else
+                    @else
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/login">{{ __('Login') }}</a>
@@ -138,12 +144,19 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-
+        <main class="pt--5">
+            <header class="title flex-center p-5 ">
+                @yield('title')
+            </header>
+            <div class="px-5">@yield('content')</div>
         </main>
+        <div class="container-fluid py-4">
+        <footer>
+            
+                <span class="flex-center">@yield('footer')</span>
+        </footer>
+            </div>
     </div>
 </body>
 
 </html>
-</head>
