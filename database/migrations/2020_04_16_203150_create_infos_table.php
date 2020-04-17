@@ -15,7 +15,7 @@ class CreateInfosTable extends Migration
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->increments('id');
-             $table->text('description');
+             $table->text('description')->defailt(NULL);
              $table->string('adresse');
              $table->string('ville');
              $table->integer('codePostal');
