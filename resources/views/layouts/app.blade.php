@@ -32,13 +32,14 @@
             height: 100vh;
             margin: 0;
         }
-        
-        footer{
-            
+
+        footer {
+
             color: #b7b7b7;
             font-weight: 200;
-             
+
         }
+
         .full-height {
             height: 100vh;
         }
@@ -79,7 +80,8 @@
 
 
         .container-fluid {
-            background-color: #1b1821;        }
+            background-color: #1b1821;
+        }
 
     </style>
 </head>
@@ -117,6 +119,10 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/profile">
+                                    <!--onclick="event.preventDefault();"-->
+                                    {{ __('Profile') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -150,12 +156,11 @@
             </header>
             <div class="px-5">@yield('content')</div>
         </main>
-        <div class="container-fluid py-4">
-        <footer>
-            
-                <span class="flex-center">@yield('footer')</span>
-        </footer>
+        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+            <div class="container text-center">
+                <small>Copyright &copy; Your Website</small>
             </div>
+        </footer>
     </div>
 </body>
 

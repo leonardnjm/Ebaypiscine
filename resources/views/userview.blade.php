@@ -6,18 +6,18 @@
 <body>
 	<form action="submit" method="POST" >
 	@csrf
-	<br></br>
+	<br>
 	<div classe ='form-group'>
 		
 	
 	<input type="text" name="nom" placeholder="Nom de l'article">
-	<br></br>
+	<br>
 
 	<input type="text" name="description" placeholder="description">
-	<br></br>
+	<br>
 
 	<input type="number" name="prix" placeholder="Prix de l'article">
-	<br></br>
+	<br>
 
 	<button type ="submit">vendre</button>
 	</div>
