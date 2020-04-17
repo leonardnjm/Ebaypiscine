@@ -15,16 +15,16 @@
 	<br></br>
 
 	<input type="text" name="description" placeholder="description">
-	<br>
+	<br></br>
 
 
 
 	<input type="number" name="prixFixe" placeholder="Prix fixe de l'article">
-	<br>
+	<br></br>
 
-	<input type="number" name="slug" placeholder="slug">
+	<input type="text" name="slug" placeholder="slug">
 
-	<br>
+	<br></br>
 
 
 	<button type ="submit">vendre</button>

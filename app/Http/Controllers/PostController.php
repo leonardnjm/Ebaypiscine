@@ -13,6 +13,17 @@ class PostController extends Controller
      *
      * @return void
      */
+     function save(Request $req)
+    {
+        //print_r($req->input());
+        $post=new Post;
+        $post->title= $req->title;
+        $post->description=$req->description;
+        $post->prixFixe=$req->prixFixe;
+        $post->slug=$req->slug;
+         $post->save();
+         return redirect('post');
+    }
   
     /**
      * Show the application dashboard.

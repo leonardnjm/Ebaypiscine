@@ -21,8 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/post', 'PostController@GetPost');
+
+
+
 Route::get('/profile', 'InfosController@GetInfo');
+Route::post('/profile','InfosController@save');
 
 
 Route::get('/test',function() {
@@ -33,8 +36,6 @@ return view('test');
 //test formulaire
 Route::view('formulaire','userview');
 
+Route::get('/post', 'PostController@GetPost');
+Route::post('submit','PostController@save');
 
-
-
-Route::post('submit','Ventes@save');
-Route::post('/profile','InfosController@save');
