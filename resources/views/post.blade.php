@@ -1,39 +1,45 @@
 @extends('layouts.app')
 
+@section('title')
 
+@stop
 @section('content')
+        <a href="/post/bonpourlemusée">Bon pour le musée      </a>
 
+		<a href="/post/vip">Vip    </a>
+		<a href="/post/ferraille">Ferraille       </a>
 
 <div class="flex-center position-ref full-height">
      <div class="content">
           <div class="title m-b-md">
-               LISTE DES PRODUITS EN VENTE
+               LISTE DES PRODUITS EN VENTE  
           </div>
 
           <div class="container">
 		<br><br>
-		<div class="row">
+		<div class="col">
 		
 		<div class="col">
+			
 					@foreach($posts as $GetPost)
-				
-					<span> nom : {{ $GetPost->title }}</span>
-				
-					<span>Description :{{ $GetPost->description }}</span>
+					<a href="/post/{{ $GetPost->title }}">{{ $GetPost->title }} </a>
+					<h1>    </h1>
 					
-					<span>Prixfixe : {{ $GetPost->prixFixe }}</span>
+					<span>  {{ $GetPost->description }}</span>
+					
+					<span> {{ $GetPost->prixFixe}}</span>
+					<span> // {{ $GetPost->category}}</span>
+					
 					<br>
 					@endforeach
+					
 			</div>
 		
 		</div>
 	</div>
          
          
-          @foreach($posts as $GetPost)
 
-
-          @endforeach
 
 
      </div>

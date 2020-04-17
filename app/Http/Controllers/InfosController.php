@@ -8,7 +8,8 @@ class InfosController extends Controller
 {
     //
     function save(Request $reqInfo)
-    {
+    {   
+        
     	$info=new Infos;
     	$info->adresse= $reqInfo->adresse;
     	$info->ville=$reqInfo->ville;

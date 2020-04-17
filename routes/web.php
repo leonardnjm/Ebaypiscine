@@ -37,5 +37,11 @@ return view('test');
 Route::view('formulaire','userview');
 
 Route::get('/post', 'PostController@GetPost');
+Route::get('/post/bonpourlemusée', 'PostController@GetMusee');
+Route::get('/post/vip', 'PostController@GetVip');
+Route::get('/post/ferraille', 'PostController@GetFeraille');
+
 Route::post('submit','PostController@save');
+
+Route::get('/post/{title}','PostController@GetSinglepost');
 
