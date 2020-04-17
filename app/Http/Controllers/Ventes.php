@@ -11,9 +11,11 @@ class Ventes extends Controller
     {
     	//print_r($req->input());
     	$user=new User2;
-    	$user->nom= $req->nom;
+    	$user->title= $req->title;
     	$user->description=$req->description;
-    	$user->prix=$req->prix;
+    	$user->prixFixe=$req->prixFixe;
+        $user->slug=$req->slug;
     	 $user->save();
+         return redirect('post');
     }
 }

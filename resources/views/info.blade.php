@@ -12,7 +12,7 @@ Profile
     <div class="row flex-center">
         <div class="pb-4 col-lg-3">
 <!--       @foreach($infos as $GetInfo)-->
-            @if($GetInfo->id == 17)
+            @if($GetInfo->id == 1)
 					<span>Adresse: {{ $GetInfo->adresse }}</span>
 					<br>
 					<span>Ville: {{ $GetInfo->ville }}</span>

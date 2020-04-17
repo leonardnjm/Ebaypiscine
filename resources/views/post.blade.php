@@ -7,20 +7,24 @@
 <div class="flex-center position-ref full-height">
      <div class="content">
           <div class="title m-b-md">
-               ACHETER
+               SALL
           </div>
 
           <div class="container">
 		<br><br>
 		<div class="row">
-		@foreach($posts as $GetPost)
-		<div class="col-md-3">
-				
-					<span>{{ $GetPost->id }}</span>
-					<span>{{ $GetPost->title }}</span>
-					<span>{{ $GetPost->slug }}</span>
+		
+		<div class="col">
+					@foreach($posts as $GetPost)
+					<span>{{ $GetPost->title }}</span> 
+					<p>                         </p>
+					<span>{{ $GetPost->description }}</span>
+					
+					<span>{{ $GetPost->prixFixe }}</span>
+					<br>
+					@endforeach
 			</div>
-		@endforeach
+		
 		</div>
 	</div>
          

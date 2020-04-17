@@ -31,10 +31,10 @@ return view('test');
 });
 
 //test formulaire
-//Route::view('formulaire','userview');
+Route::view('formulaire','userview');
 
 
 
 
-//route::post('submit','Ventes@save');
+Route::post('submit','Ventes@save');
 Route::post('/profile','InfosController@save');

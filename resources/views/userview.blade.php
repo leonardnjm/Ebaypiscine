@@ -10,14 +10,22 @@
 	<div classe ='form-group'>
 		
 	
-	<input type="text" name="nom" placeholder="Nom de l'article">
-	<br>
+
+	<input type="text" name="title" placeholder="Nom de l'article">
+	<br></br>
 
 	<input type="text" name="description" placeholder="description">
 	<br>
 
-	<input type="number" name="prix" placeholder="Prix de l'article">
+
+
+	<input type="number" name="prixFixe" placeholder="Prix fixe de l'article">
 	<br>
+
+	<input type="number" name="slug" placeholder="slug">
+
+	<br>
+
 
 	<button type ="submit">vendre</button>
 	</div>
