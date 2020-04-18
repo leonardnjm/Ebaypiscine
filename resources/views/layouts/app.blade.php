@@ -126,6 +126,7 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
                                 <a class="dropdown-item" href="/profile">
                                     <!--onclick="event.preventDefault();"-->
                                     {{ __('Profile') }}
@@ -158,10 +159,10 @@
         </nav>
 
         <main class="pt--5">
-            <header class="title flex-center p-5 ">
+            <header class="title text-center flex-center p-5 ">
                 @yield('title')
             </header>
-            <div class="px-5">@yield('content')</div>
+            <div class="p-5">@yield('content')</div>
         </main>
         <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
             <div class="container text-center">

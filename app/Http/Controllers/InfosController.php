@@ -12,7 +12,7 @@ class InfosController extends Controller
     //
     function save(Request $reqInfo)
     {   
-        $user= new User;
+//        $user= new User;
     	$info=new Infos;
     	$info->adresse= $reqInfo->adresse;
     	$info->ville=$reqInfo->ville;
@@ -26,48 +26,50 @@ class InfosController extends Controller
         return redirect('/profile');
     }
     
-    function update(Request $reqNewInfo)
-    {
-        
-//        Infos::where('adresse',$reqNewInfo->adresse)->update(['ville'=>$reqNewInfo->ville]);
-        
-        $newInfo= Infos::find($reqNewInfo->adresse);
-        $newInfo->ville=$reqNewInfo->ville;
-    	$newInfo->codePostal=$reqNewInfo->codePostal;
-    	$newInfo->pays=$reqNewInfo->pays;
-    	$newInfo->description=$reqNewInfo->description;
-        $newInfo->save();
-                                          
-//        return redirect('/profile');
-    }
-    
-    function Get()
-    {
-        $infos= Infos::all();
-        return view('info', compact('infos'));
-        
-    }
-    
     function GetInfo()
     {
             $user_id= Auth::id();
             $user= User::find($user_id);
             $info_id= $user->info_id;
+            $role_id= $user->role_id;
         $data= DB::table('infos')
             ->join('users','infos.id','users.info_id')
             ->where('infos.id', $info_id)
-            ->select('infos.*','users.name','users.info_id')
+            ->select('infos.*','users.*')
             ->get();
-        
-//        echo "<pre>";
-////        print_r($info_id);
-//        print_r($data);
-        return view('info', compact('data'));
+        $role= DB::table('roles')
+            ->join('users','roles.id','users.role_id')
+            ->where('roles.id', $role_id)
+            ->select('roles.*','users.*')
+            ->get();
+        return view('info', compact('data','role'));
     }
+    
+//    function update(Request $reqNewInfo)
+//    {
+//        
+////        Infos::where('adresse',$reqNewInfo->adresse)->update(['ville'=>$reqNewInfo->ville]);
+//        
+//        $newInfo= Infos::find($reqNewInfo->adresse);
+//        $newInfo->ville=$reqNewInfo->ville;
+//    	$newInfo->codePostal=$reqNewInfo->codePostal;
+//    	$newInfo->pays=$reqNewInfo->pays;
+//    	$newInfo->description=$reqNewInfo->description;
+//        $newInfo->save();
+//                                          
+////        return redirect('/profile');
+//    }
+    
+//    function Get()
+//    {
+//        $infos= Infos::all();
+//        return view('info', compact('infos'));
+//        
+//    }
+    
 //    $user= new User;
 //        $user_infoid= $user->info_id;
 //        $data= DB::table('infos')->join('users', 'infos.id', '=', 'users.info_id')->where('infos.id','=','users.info_id')->select('infos.*')->get();
 //        print_r($data);
 //        return view('info', compact('data'));
 }
-

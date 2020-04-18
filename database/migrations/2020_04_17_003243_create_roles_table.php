@@ -15,7 +15,7 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-             $table->enum('role', ['ACHTEUR', 'VENDEUR', 'ADMIN'])->default('ACHTEUR');
+             $table->string('role')->default('acheteur');
             $table->timestamps();
         });
     }

@@ -8,28 +8,35 @@ Profile
 
 <body>
 
-   
+
     <div class="row flex-center">
         <div class="pb-4 col-lg-3">
-        @foreach($data as $GetInfo)
-        
-					<span> {{ $GetInfo->name }}</span>
-					<br>
-					<span>Adresse: {{ $GetInfo->adresse }}</span>
-					<br>
-					<span>Ville: {{ $GetInfo->ville }}</span>
-					<br>
-					<span>Code Postal: {{ $GetInfo->codePostal }}</span>
-					<br>
-					<span>Pays: {{ $GetInfo->pays }}</span>
-					<br>
-					<span>Description: {{ $GetInfo->description }}</span>
-					<br>
-					<span>Créée le {{ $GetInfo->created_at }}</span>
-					<br>
-        @endforeach
-		
-		</div>
+            @foreach($role as $GetRole)
+            <span>Vous êtes un {{ $GetRole->role }}</span>
+            <br>
+            @endforeach
+            @foreach($data as $GetInfo)
+
+            <span> {{ $GetInfo->name }}</span>
+            <br>
+            <span> {{ $GetInfo->email }}</span>
+            <br>
+            <span>Adresse: {{ $GetInfo->adresse }}</span>
+            <br>
+            <span>Ville: {{ $GetInfo->ville }}</span>
+            <br>
+            <span>Code Postal: {{ $GetInfo->codePostal }}</span>
+            <br>
+            <span>Pays: {{ $GetInfo->pays }}</span>
+            <br>
+            <span>Description: {{ $GetInfo->description }}</span>
+            <br>
+            <span>Créée le {{ $GetInfo->created_at }}</span>
+            <br>
+
+            @endforeach
+
+        </div>
 
         <div class="pb-4 col-lg-9">
             <form action="profile" method="post" class="needs-validation" novalidate>
@@ -76,35 +83,35 @@ Profile
             </form>
         </div>
     </div>
-        <br><br>
+    <br><br>
     <h2>Informations de paiement</h2>
-	<div class="pb-4 col-lg-9">
-            <form action="profile2" method="post" class="needs-validation" novalidate>
-                @csrf
-                <div class="form-row">
-                    <div class="col-lg-6 mb-2">
-                        <label for="numeroCarte">Numéro de la carte</label>
-                        <input type="text" class="form-control" name="numeroCarte" required>
-                    </div>
-
-                    <div class="col-lg-6 mb-2">
-                        <label for="nomTitulaire">Nom du titulaire</label>
-                        <input type="text" class="form-control"  name="nomTitulaire" required>
-                    </div>
-
-                    <div class="col-lg-6 mb-2">
-                        <label for="dateExpiration">Date d'expiration</label>
-                        <input type="date" class="form-control" name="dateExpiration" required>
-                    </div>
-                    <div class="col-lg-6 mb-2">
-                        <label for="crypto">crypto</label>
-                        <input type="text" class="form-control"  name="crypto" required>
-                    </div>
-                     <button class="btn btn-secondary btn-block" type="submit">Enregistrer les informations de paiement</button>
+    <div class="pb-4 col-lg-9">
+        <form action="profile2" method="post" class="needs-validation" novalidate>
+            @csrf
+            <div class="form-row">
+                <div class="col-lg-6 mb-2">
+                    <label for="numeroCarte">Numéro de la carte</label>
+                    <input type="text" class="form-control" name="numeroCarte" required>
                 </div>
-            </form>
-        </div>
-  
+
+                <div class="col-lg-6 mb-2">
+                    <label for="nomTitulaire">Nom du titulaire</label>
+                    <input type="text" class="form-control" name="nomTitulaire" required>
+                </div>
+
+                <div class="col-lg-6 mb-2">
+                    <label for="dateExpiration">Date d'expiration</label>
+                    <input type="date" class="form-control" name="dateExpiration" required>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <label for="crypto">crypto</label>
+                    <input type="text" class="form-control" name="crypto" required>
+                </div>
+                <button class="btn btn-secondary btn-block" type="submit">Enregistrer les informations de paiement</button>
+            </div>
+        </form>
+    </div>
+
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {

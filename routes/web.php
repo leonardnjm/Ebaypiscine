@@ -21,36 +21,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-
 Route::get('/profile', 'InfosController@GetInfo');
 Route::post('/profile','InfosController@save');
 
+//Route::get('/profile','RolesController@GetRole');
+
 Route::post('/profile2','cartebController@save');
 
-Route::get('/test',function() {
-
-return view('test');
-});
-
-//test formulaire
 Route::view('formulairevente','formulairevente');
-Route::get('/vente','PostController@GetVente');
 
+Route::get('/vente','PostController@GetVente');
 Route::get('/post', 'PostController@GetPost');
 Route::get('/post/bonpourlemusée', 'PostController@GetMusee');
 Route::get('/post/vip', 'PostController@GetVip');
 Route::get('/post/ferraille', 'PostController@GetFeraille');
-
 Route::post('submit','PostController@save');
-
 Route::get('/post/{title}','PostController@GetSinglepost');
-
 Route::get('/delete/{id}','PostController@delete');
-
 Route::get('/edit/{id}','PostController@edit');
-
 Route::post('edit','PostController@update');
 
 

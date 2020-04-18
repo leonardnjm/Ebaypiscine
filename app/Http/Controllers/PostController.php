@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\User;
 use Session;
-use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -18,8 +19,6 @@ class PostController extends Controller
      */
      function save(Request $req)
     {
-
-
         $post=new Post;
         $post->title= $req->title;
         $post->description=$req->description;
@@ -30,6 +29,8 @@ class PostController extends Controller
         $post->typeVente=$req->typeVente;
         $post->save();
         $req->session()->flash('status', 'Votre item a été ajouté');
+         $iduser=Auth::id();
+         DB::table('posts')->where('id',$post->id)->update(['user_id'=>$iduser]);
          return redirect('vente');
     }
   
@@ -42,7 +43,10 @@ class PostController extends Controller
     {
 
     
-         $posts= Post::all();
+         $posts= DB::table('posts')
+            ->join('users','posts.user_id','users.id')
+            ->select('posts.*','users.*')
+            ->get();
          
         return view('post', compact('posts'));
     }
@@ -83,14 +87,18 @@ class PostController extends Controller
          return view('post', compact('posts'));
         
     }     
-            public function GetVente()
-    {
-
     
-         $posts= Post::all();
-         
+    function GetVente()
+    {
+            $user_id= Auth::id();
+            $posts= DB::table('posts')
+            ->join('users','posts.user_id','users.id')
+            ->where('posts.user_id', $user_id)
+            ->select('posts.*','users.*')
+            ->get();
         return view('vente', compact('posts'));
     }
+    
     public function delete($id)
     {
 

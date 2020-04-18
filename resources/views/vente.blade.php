@@ -25,7 +25,6 @@ Liste des ventes
 			<table class="table">
 				<thead>
 						<tr>
-							<th scope="col">id</th>
 							<th scope="col">Titre</th>
 							<th scope="col">Description</th>
 							<th scope="col">Prix</th>
@@ -40,8 +39,7 @@ Liste des ventes
 			
 					@foreach($posts as $GetPost)
 					<tr>
-						<th scope="col">{{ $GetPost->id }}</th>
-						<th scope="row">{{ $GetPost->title }}</th>
+						<th scope="col">{{ $GetPost->title }}</th>
 						<td>{{ $GetPost->description }}</td>
 						<td>{{ $GetPost->prixFixe }}</td>
 						<td>{{ $GetPost->category }}</td>
