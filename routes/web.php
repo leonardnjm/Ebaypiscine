@@ -27,6 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'InfosController@GetInfo');
 Route::post('/profile','InfosController@save');
 
+Route::post('/profile2','cartebController@save');
 
 Route::get('/test',function() {
 
@@ -35,6 +36,7 @@ return view('test');
 
 //test formulaire
 Route::view('formulaire','userview');
+Route::get('/vente','PostController@GetVente');
 
 Route::get('/post', 'PostController@GetPost');
 Route::get('/post/bonpourlemusée', 'PostController@GetMusee');
@@ -43,13 +45,12 @@ Route::get('/post/ferraille', 'PostController@GetFeraille');
 
 Route::post('submit','PostController@save');
 
-//Route::get('/post/{title}','PostController@GetSinglepost');
+Route::get('/post/{title}','PostController@GetSinglepost');
 
-//Route::post('profile','InfosController@update');
+Route::get('/delete/{id}','PostController@delete');
+
+Route::get('/edit/{id}','PostController@edit');
+
+Route::post('edit','PostController@update');
 
 
-Route::post('/profile2','cartebController@save');
-
-//Route::get('post','PostController@index');
-
-//Route::get('/post','PostController@index');

@@ -26,7 +26,7 @@
 		
 		<div class="col">
 			
-					<!--@foreach($posts as $GetPost)
+					@foreach($posts as $GetPost)
 					<a href="/post/{{ $GetPost->title }}">{{ $GetPost->title }} </a>
 					<h1>    </h1>
 					
@@ -48,7 +48,7 @@
 				
 				
 					<br>
-					@endforeach-->
+					@endforeach
 					
 			</div>
 		

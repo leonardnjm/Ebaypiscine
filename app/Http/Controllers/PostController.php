@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use Session;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
@@ -27,7 +28,7 @@ class PostController extends Controller
         $post->slug=$req->slug;
         $post->category=$req->category;
         $post->save();
-         return redirect('post')->with('success','votre objet a été ajouté');
+         return redirect('vente');
     }
   
     /**
@@ -43,7 +44,7 @@ class PostController extends Controller
          
         return view('post', compact('posts'));
     }
-    
+
  public function GetMusee()
     {
         
@@ -80,7 +81,51 @@ class PostController extends Controller
          return view('post', compact('posts'));
         
     }     
+            public function GetVente()
+    {
+
+    
+         $posts= Post::all();
+         
+        return view('vente', compact('posts'));
+    }
+    public function delete($id)
+    {
+
+         Post::find($id)->delete();
+         Session::flash('status','                                                                                                                   La vente a été supprimé');
+         return redirect('vente');
+    }
+    public function edit($id){
+
+        $data=Post::find($id);
+        return view('updatepost',['data'=>$data]);
+    }
+
      
+
+    public function update(Request $req)
+    {
+
+
+        $post= Post::find($req->id);
+        $post->title= $req->title;
+        $post->description=$req->description;
+        $post->prixFixe=$req->prixFixe;
+
+        $post->slug=$req->slug;
+        $post->category=$req->category;
+        $post->save();
+         return redirect('vente');
+    }
+
+
+
+
+
+
+
+
  /*    function index()
      {
           $posts=DB::table('posts')
