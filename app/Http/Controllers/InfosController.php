@@ -45,31 +45,9 @@ class InfosController extends Controller
         return view('info', compact('data','role'));
     }
     
-//    function update(Request $reqNewInfo)
-//    {
-//        
-////        Infos::where('adresse',$reqNewInfo->adresse)->update(['ville'=>$reqNewInfo->ville]);
-//        
-//        $newInfo= Infos::find($reqNewInfo->adresse);
-//        $newInfo->ville=$reqNewInfo->ville;
-//    	$newInfo->codePostal=$reqNewInfo->codePostal;
-//    	$newInfo->pays=$reqNewInfo->pays;
-//    	$newInfo->description=$reqNewInfo->description;
-//        $newInfo->save();
-//                                          
-////        return redirect('/profile');
-//    }
-    
-//    function Get()
-//    {
-//        $infos= Infos::all();
-//        return view('info', compact('infos'));
-//        
-//    }
-    
-//    $user= new User;
-//        $user_infoid= $user->info_id;
-//        $data= DB::table('infos')->join('users', 'infos.id', '=', 'users.info_id')->where('infos.id','=','users.info_id')->select('infos.*')->get();
-//        print_r($data);
-//        return view('info', compact('data'));
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 }

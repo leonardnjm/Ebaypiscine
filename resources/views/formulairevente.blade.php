@@ -4,26 +4,29 @@
 <html>
 
 <body>
-    <form action="submit" method="POST">
+   @section('title')
+   Ajouter un produit en vente 
+   @stop
+    <form action="submit" method="POST" class="needs-validation" novalidate>
         @csrf
         <br>
         <div classe='form-group'>
 
 
 
-            <input type="text" name="title" placeholder="Nom de l'article">
-            <br>
+            <input type="text" class="form-control" name="title" placeholder="Nom de l'article" required>
+            <br><br>
 
-            <input type="text" name="description" placeholder="description">
-            <br>
+            <input type="text" class="form-control" name="description" placeholder="description" required>
+            <br><br>
 
 
 
-            <input type="number" name="prixFixe" placeholder="Prix fixe de l'article">
-            <br>
+            <input type="number" class="form-control" name="prixFixe" placeholder="Prix fixe de l'article" required>
+            <br><br>
 
-            <input type="text" name="slug" placeholder="slug">
-            <br>
+            <input type="text" class="form-control" name="slug" placeholder="slug" required>
+            <br><br>
             <label for="category">Catégorie de l'object</label>
             <select class="custom-select" name="category" required>
                 <option selected disabled value="">--Choisir--</option>
@@ -33,7 +36,7 @@
 
             </select>
 
-            <br>
+            <br><br>
 
 
             <label for="typeVente">Type de Vente</label>
@@ -45,7 +48,7 @@
                 <option>Achat immédiat et Meilleure offre</option>
 
             </select>
-        <br>
+        <br><br>
 
         <button type="submit">vendre</button>
         </div>

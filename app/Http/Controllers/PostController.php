@@ -31,7 +31,7 @@ class PostController extends Controller
         $req->session()->flash('status', 'Votre item a été ajouté');
          $iduser=Auth::id();
          DB::table('posts')->where('id',$post->id)->update(['user_id'=>$iduser]);
-         return redirect('vente');
+         return redirect('vendre');
     }
   
     /**
@@ -39,55 +39,6 @@ class PostController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function GetPost()
-    {
-
-    
-         $posts= DB::table('posts')
-            ->join('users','posts.user_id','users.id')
-            ->select('posts.*','users.*')
-            ->get();
-         
-        return view('post', compact('posts'));
-    }
-
- public function GetMusee()
-    {
-        
-    
-         $posts= Post::where('category','Bon pour le musée')->get();
-         
-        return view('post', compact('posts'));
-    }
-     public function GetVip()
-    {
-        
-    
-         $posts= Post::where('category','Vip')->get();
-         
-        return view('post', compact('posts'));
-    }
-
- public function GetFeraille()
-    {
-        
-        
-         $posts= Post::where('category','ferraille ou trésor')->get();
-         
-         return view('post', compact('posts'));
-        
-    }
-     
-     public function GetSinglepost()
-    {
-        
-        
-         $posts= Post::all();
-         
-         return view('post', compact('posts'));
-        
-    }     
-    
     function GetVente()
     {
             $user_id= Auth::id();
@@ -104,8 +55,9 @@ class PostController extends Controller
 
          Post::find($id)->delete();
         Session::flash('status', 'Votre item a été supprimé');
-         return redirect('vente');
+         return redirect('vendre');
     }
+    
     public function edit($id){
 
         $data=Post::find($id);
@@ -128,8 +80,24 @@ class PostController extends Controller
         $post->typeVente=$req->typeVente;
         $post->save();
                 Session::flash('status', 'Votre item a été modifié');
-         return redirect('vente');
+         return redirect('vendre');
     }
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+     
+     public function GetSinglepost()
+    {
+        
+        
+         $posts= Post::all();
+         
+         return view('post', compact('posts'));
+        
+    }     
+    
 
 
 

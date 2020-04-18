@@ -30,15 +30,17 @@ Route::post('/profile2','cartebController@save');
 
 Route::view('formulairevente','formulairevente');
 
-Route::get('/vente','PostController@GetVente');
-Route::get('/post', 'PostController@GetPost');
-Route::get('/post/bonpourlemusée', 'PostController@GetMusee');
-Route::get('/post/vip', 'PostController@GetVip');
-Route::get('/post/ferraille', 'PostController@GetFeraille');
+Route::get('/post', 'AchatsController@GetPost');
+Route::get('/enchère', 'AchatsController@GetPost');
+Route::get('/post/bonpourlemusée', 'AchatsController@GetMusee');
+Route::get('/post/vip', 'AchatsController@GetVip');
+Route::get('/post/ferraille', 'AchatsController@GetFeraille');
+
+Route::get('/vendre','PostController@GetVente');
 Route::post('submit','PostController@save');
-Route::get('/post/{title}','PostController@GetSinglepost');
 Route::get('/delete/{id}','PostController@delete');
 Route::get('/edit/{id}','PostController@edit');
 Route::post('edit','PostController@update');
 
+//Route::get('/post/{title}','PostController@GetSinglepost');
 

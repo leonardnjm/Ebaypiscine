@@ -84,11 +84,11 @@
         .container-fluid {
             background-color: #1b1821;
         }
-         
-         
- .card .material {
-    z-index: 10000;
-}
+
+
+        .card .material {
+            z-index: 10000;
+        }
 
     </style>
 </head>
@@ -104,18 +104,24 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
                     <!-- Left Side Of Navbar -->
+                    @guest
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/post">{{ __('acheter') }}</a>
+                        </li>
+                    </ul>
+                    @endguest
                     @auth
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/post">{{ __('acheter') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/vente">{{ __('vendre') }}</a>
+                            <a class="nav-link" href="/vendre">{{ __('vendre') }}</a>
                         </li>
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
