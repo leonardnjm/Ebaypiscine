@@ -39,12 +39,14 @@
                         <label for="typeVente">Type de Vente</label>
                         <select class="custom-select" name="typeVente" required>
                             <option selected disabled value="">--Choisir--</option>
-                            <option>NEGO</option>
-                            <option>ACHATD</option>
-                            <option>ENCHERE</option>
+                            <option>Meilleure Offre</option>
+                            <option>Achat immédiat</option>
+                            <option>Enchere</option>
+                            <option>Achat immédiat et Meilleure offre</option>
                            
                         </select>
                     </div>
+                    <br>
 
 	<button type ="submit">vendre</button>
 	</div>

@@ -35,7 +35,7 @@ return view('test');
 });
 
 //test formulaire
-Route::view('formulaire','userview');
+Route::view('formulairevente','formulairevente');
 Route::get('/vente','PostController@GetVente');
 
 Route::get('/post', 'PostController@GetPost');

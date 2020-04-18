@@ -4,7 +4,7 @@
 <form action="/edit" method="POST" >
 	@csrf
 	<br>
-	<h1>Edit ventes</h1>
+	<h1>Renseignez les informations à modifier</h1>
 	<div classe ='form-group'>
 		
 	
@@ -19,8 +19,8 @@
 
 
 	<input type="number" name="prixFixe"value="{{$data->prixFixe}}" placeholder="Prix fixe de l'article">
+	
 	<br></br>
-
 	<input type="text" name="slug" placeholder="slug">
 	<br></br>
   	<label for="category">Catégorie de l'object</label>
@@ -35,17 +35,20 @@
 	<br></br>
 	
 	                   
-                        <label for="typeVente">Type de Vente</label>
+<label for="typeVente">Type de Vente</label>
                         <select class="custom-select" name="typeVente" required>
                             <option selected disabled value="">--Choisir--</option>
-                            <option>NEGO</option>
-                            <option>ACHATD</option>
-                            <option>ENCHERE</option>
+                            <option>Meilleure Offre</option>
+                            <option>Achat immédiat</option>
+                            <option>Enchere</option>
+                            <option>Achat immédiat et Meilleure offre</option>
                            
                         </select>
                     </div>
+                    <br>
 
-	<button type ="submit">vendre</button>
+	<button type ="submit">Modifier votre vente</button>
+	<br>
 	</div>
 	</form>
 </body>

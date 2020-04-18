@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('image')->nullable();
             $table->string('slug')->unique();
             $table->text('meta_keywords');
-            $table->enum('typeVente', ['ENCHERE', 'ACHATD', 'NEGO']);
+            $table->string('typeVente');
              $table->integer('prixVariable');
              $table->integer('prixFixe');
              $table->integer('prixMax');

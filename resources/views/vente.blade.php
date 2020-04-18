@@ -4,7 +4,8 @@
 Liste des ventes
 @endsection
 @section('content')
-<div class="flex-center position-ref full-height">
+
+<div class="flex-top position-ref full-height">
      <div class="content">
 
 
@@ -20,6 +21,7 @@ Liste des ventes
 							<th scope="col">Description</th>
 							<th scope="col">Prix</th>
 							<th scope="col">Categorie</th>
+							<th scope="col">Type de Vente</th>
 							<th scope="col">Operations</th>
 
 
@@ -34,6 +36,7 @@ Liste des ventes
 						<td>{{ $GetPost->description }}</td>
 						<td>{{ $GetPost->prixFixe }}</td>
 						<td>{{ $GetPost->category }}</td>
+						<td>{{ $GetPost->typeVente }}</td>
 
 						<td>
 						<a href="/delete/{{$GetPost->id}}"><i class="fa fa-trash"></i></a>
@@ -53,12 +56,14 @@ Liste des ventes
 
 
 					
-										<input type=button onclick=window.location.href='http://127.0.0.1:8000/formulaire'; value=Vendre />
+										<input type=button onclick=window.location.href='http://127.0.0.1:8000/formulairevente'; value=Vendre />
 			</div>
 			</div>	
 					
 			</div>
 		
 	</div>
+
+
 </div>
 @endsection
