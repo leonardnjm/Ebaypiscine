@@ -11,8 +11,10 @@ Profile
    
     <div class="row flex-center">
         <div class="pb-4 col-lg-3">
-<!--       @foreach($infos as $GetInfo)-->
-            @if($GetInfo->id == 1)
+        @foreach($data as $GetInfo)
+        
+					<span> {{ $GetInfo->name }}</span>
+					<br>
 					<span>Adresse: {{ $GetInfo->adresse }}</span>
 					<br>
 					<span>Ville: {{ $GetInfo->ville }}</span>
@@ -25,13 +27,8 @@ Profile
 					<br>
 					<span>Créée le {{ $GetInfo->created_at }}</span>
 					<br>
-<!--
-					<span>Dernière mise à jour il y a{{ $GetInfo->updated_at }}</span>
-					<br>
--->
-            @endif
+        @endforeach
 		
-<!--		@endforeach-->
 		</div>
 
         <div class="pb-4 col-lg-9">

@@ -43,7 +43,9 @@ Route::get('/post/ferraille', 'PostController@GetFeraille');
 
 Route::post('submit','PostController@save');
 
-Route::get('/post/{title}','PostController@GetSinglepost');
+//Route::get('/post/{title}','PostController@GetSinglepost');
+
+//Route::post('profile','InfosController@update');
 
 
 Route::post('/profile2','cartebController@save');

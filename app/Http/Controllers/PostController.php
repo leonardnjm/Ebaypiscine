@@ -42,6 +42,7 @@ class PostController extends Controller
          
         return view('post', compact('posts'));
     }
+    
  public function GetMusee()
     {
         

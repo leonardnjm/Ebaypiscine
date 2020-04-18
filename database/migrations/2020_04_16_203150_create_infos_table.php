@@ -23,6 +23,8 @@ class CreateInfosTable extends Migration
             $table->timestamps();
              $table->integer('carte_id')->unsigned();
              $table->foreign('carte_id')->references('id')->on('cartes');
+            $table->integer('user_id')->unsigned();
+             $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
