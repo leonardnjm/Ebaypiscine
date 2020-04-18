@@ -81,7 +81,7 @@ class PostController extends Controller
         
     }     
      
-     function index()
+ /*    function index()
      {
           $posts=DB::table('posts')
                ->join('users','posts.user_id','=','users.id')
@@ -96,6 +96,6 @@ class PostController extends Controller
           
     
      }
-
+*/
      
 }

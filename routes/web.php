@@ -52,4 +52,4 @@ Route::post('/profile2','cartebController@save');
 
 //Route::get('post','PostController@index');
 
-Route::get('/post','PostController@index');
+//Route::get('/post','PostController@index');
