@@ -84,6 +84,11 @@
         .container-fluid {
             background-color: #1b1821;
         }
+         
+         
+ .card .material {
+    z-index: 10000;
+}
 
     </style>
 </head>

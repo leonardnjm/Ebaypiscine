@@ -1,69 +1,72 @@
 @extends('layouts.app')
 
 @section('title')
- LISTE DES PRODUITS EN VENTE  
+LISTE DES PRODUITS EN VENTE
 @stop
 @section('content')
-		<FONT size="20pt">
-			<style>
-			#link { color: #414141;}
-			</style>
-        <a id="link" href="/post/bonpourlemusée">&bull;Bon pour le musée      </a>
-        <br>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-		<a id="link" href="/post/vip">&bull;Vip    </a>
-		<br>
-		<a id="link" href="/post/ferraille">&bull;Ferraille       </a>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 
-	</FONT>
-<div class="flex-center position-ref full-height">
-     <div class="content">
+<i class="material-icons" data-toggle="tooltip" data-placement="top" title="Ahouter a panier" >local_mall</i>
 
 
-          <div class="container">
-		<br><br>
-		<div class="col">
-		
-		<div class="col">
-			
-					@foreach($posts as $GetPost)
-					<a href="/post/{{ $GetPost->title }}">{{ $GetPost->title }} </a>
-					<h1>    </h1>
-					
-						
-						
-					<tr>		
-						<td>			
-					<a id="link" href="/post/{{ $GetPost->title }}">{{ $GetPost->title }} </a>
-					
-						</td><td>
-					<span> // {{ $GetPost->description }}</span>
-						</td><td>
-					<span>// {{ $GetPost->prixFixe}}</span>
-						</td><td>
-					<span> // {{ $GetPost->category}}</span>
-				    	</td>
-				    </tr>
-				</table>
-				
-				
-					<br>
-					@endforeach
-					
-			</div>
-		
-		</div>
-	</div>
+
+<div class="row">
+     <div class="col-2 bg-light">
+          <style>
+               #link {
+                    color: #414141;
+               }
+
+          </style>
          
-         
-
-
-
+          <a id="link" href="/post">Tout</a> <br><br>
+          <a id="link" href="/post/bonpourlemusée">Bon pour le musée</a><br>
+          <a id="link" href="/post/vip">Vip </a><br>
+          <a id="link" href="/post/ferraille">Ferraille </a>
      </div>
+
+
+     <div class="col">
+          <div class="text-centered">
+               <div class="container">
+                    <br><br>
+                    <div class="col">
+                         <div class="col">
+              @foreach($posts as $GetPost)
+     <div class="card mb-3" style="max-width: auto;">
+          <div class="row no-gutters">
+                                   
+               <div class="media position-relative">
+                    <img src="..." class="mr-3" alt="...">
+                    <div class="media-body">
+                         <h5 class="card-title">{{ $GetPost->title }}</h5>
+                         <p class="card-text">{{ $GetPost->description}}</p>
+                         <p class="card-text text-right"><small class="text-muted">Last updated 3 mins ago</small></p>
+                         
+                    </div>
+               </div>
+                         <a href="/post/{{ $GetPost->title }}" class="stretched-link"></a>
+          </div>
+     </div>
+                         
+
+               @endforeach
+                            
+
+                         </div>
+
+                    </div>
+               </div>
+          </div>
+     </div>
+
+ 
+
 </div>
-
 @endsection
-
-
-
-
