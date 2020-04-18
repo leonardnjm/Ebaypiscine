@@ -48,3 +48,6 @@ Route::get('/post/{title}','PostController@GetSinglepost');
 
 Route::get('/carteb','cartebController@save');
 
+//Route::get('post','PostController@index');
+
+Route::get('/post','PostController@index');

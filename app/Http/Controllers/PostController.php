@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
@@ -68,6 +69,7 @@ class PostController extends Controller
          return view('post', compact('posts'));
         
     }
+     
      public function GetSinglepost()
     {
         
@@ -76,7 +78,23 @@ class PostController extends Controller
          
          return view('post', compact('posts'));
         
-    }
+    }     
+     
+     function index()
+     {
+          $posts=DB::table('posts')
+               ->join('users','posts.user_id','=','users.id')
+            //   ->where('posts.user_id','users.id')
+               //->where('posts.id',0)
+             //  ->select('users.name')
+               ->get();
+          
+     //     echo "<pre>";  
+     //     print_r($posts);
+          return view('post',compact('posts'));
+          
+    
+     }
 
      
 }
