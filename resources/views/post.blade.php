@@ -39,15 +39,17 @@ $(document).ready(function(){
                     <div class="col">
                          <div class="col">
               @foreach($posts as $GetPost)
+              
      <div class="card mb-3" style="max-width: auto;">
           <div class="row no-gutters">
                                    
                <div class="media position-relative">
                     <img src="..." class="mr-3" alt="...">
                     <div class="media-body">
-                         <h5 class="card-title">{{ $GetPost->title }}</h5>
-                         <p class="card-text">{{ $GetPost->description}}</p>
+                        <h5 class="card-title">{{ $GetPost->title }}</h5>
+                         <p class="card-text">{{ mb_strimwidth($GetPost->description,0,30,'...')}}</p>
                          <p class="card-text text-right"><small class="text-muted">Last updated 3 mins ago</small></p>
+                         
                          
                     </div>
                </div>

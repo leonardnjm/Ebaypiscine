@@ -26,7 +26,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-             $table->integer('nbNego');
              $table->integer('post_id')->unsigned();
              $table->foreign('post_id')->references('id')->on('posts');
              $table->integer('panier_id')->unsigned();

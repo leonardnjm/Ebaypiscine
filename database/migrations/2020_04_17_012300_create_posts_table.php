@@ -28,6 +28,7 @@ class CreatePostsTable extends Migration
              $table->integer('prixFixe');
              $table->integer('prixMax');
             $table->boolean('featured')->default(0);
+             $table->string('aricleVendu')->default('non');
             $table->timestamps();
 
         });
