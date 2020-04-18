@@ -119,6 +119,7 @@ class PostController extends Controller
         $post->category=$req->category;
         $post->typeVente=$req->typeVente;
         $post->save();
+                Session::flash('status', 'Votre item a été modifié');
          return redirect('vente');
     }
 
