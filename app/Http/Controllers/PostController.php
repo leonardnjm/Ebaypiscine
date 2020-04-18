@@ -29,6 +29,7 @@ class PostController extends Controller
         $post->category=$req->category;
         $post->typeVente=$req->typeVente;
         $post->save();
+        $req->session()->flash('status', 'Votre item a été ajouté');
          return redirect('vente');
     }
   
@@ -94,7 +95,7 @@ class PostController extends Controller
     {
 
          Post::find($id)->delete();
-         Session::flash('status',' La vente a été supprimé');
+        Session::flash('status', 'Votre item a été supprimé');
          return redirect('vente');
     }
     public function edit($id){
