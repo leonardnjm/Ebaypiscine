@@ -26,7 +26,7 @@ class PostController extends Controller
         $post->slug=$req->slug;
         $post->category=$req->category;
         $post->save();
-         return redirect('post');
+         return redirect('post')->with('success','votre objet a été ajouté');
     }
   
     /**

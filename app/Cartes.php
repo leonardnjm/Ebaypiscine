@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Cartes extends Model
 {
          protected $table ='cartes';
+         public $timestamps=false;
 
 }

@@ -18,10 +18,10 @@ class cartebController extends Controller
         $carte=new Cartes;
         $carte->numeroCarte= $req->numeroCarte;
         $carte->nomTitulaire=$req->nomTitulaire;
-        $carte->dateExpiration=$req->prixFixe;
-        $carte->category=$req->category;
+        $carte->dateExpiration=$req->dateExpiration;
+        $carte->crypto=$req->crypto;
         $carte->save();
-         return redirect('carteb');
+         return redirect('profile');
     }
      
      

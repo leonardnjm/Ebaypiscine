@@ -46,5 +46,5 @@ Route::post('submit','PostController@save');
 Route::get('/post/{title}','PostController@GetSinglepost');
 
 
-Route::get('/carteb','cartebController@save');
+Route::post('/profile2','cartebController@save');
 
