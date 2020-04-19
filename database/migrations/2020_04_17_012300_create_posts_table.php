@@ -23,7 +23,6 @@ class CreatePostsTable extends Migration
             $table->string('title',100);
             $table->text('description');
             $table->string('image')->nullable();
-            $table->string('slug')->unique();
             $table->text('meta_keywords');
             $table->string('typeVente');
              $table->integer('prixVariable');
