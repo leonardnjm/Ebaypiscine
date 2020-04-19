@@ -39,7 +39,7 @@ Profile
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                <div class="row">
                   <div class="col-md-5">
-                      <img src="{{ URL::to('/storage/app/public/profil-avatar-femme-icone-ronde_24640-14042.jpg') }}" class="rounded-circle" alt="Cinque Terre">
+                      <img src="{{asset(Auth::user()->avatar)}}" style="height:100px;width:100px; margin-right:15px">
                       
                   </div>
                    <div class="col-md-7">
@@ -72,7 +72,7 @@ Profile
             </div>
             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                 <div class="row flex-center">
-                    <form action="forminfo" method="POST" class="needs-validation" novalidate>
+                    <form action="renseigner" method="POST" class="needs-validation" novalidate>
                         @csrf
                         <div class="form-row px-3">
                             <div class="col-lg-5 mb-3">
@@ -118,7 +118,7 @@ Profile
             </div>
             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                 <div class="row flex-center">
-                    <form action="carteb" method="post" class="needs-validation" novalidate>
+                    <form action="carte" method="post" class="needs-validation" novalidate>
                         @csrf
                         <div class="form-row px-3">
                             <div class="col-lg-6 mb-2">

@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
              $table->foreign('info_id')->references('id')->on('infos');
             $table->string('name');
              $table->string('surname');
-             $table->string('avatar')->nullable();
+             $table->string('avatar')->default('/images/1587277519.jpg');
              $table->string('background')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

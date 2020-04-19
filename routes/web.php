@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::post('/upload',"ImagesController@index");
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
 
 Route::get('/profile', 'InfosController@GetInfo');
 Route::post('renseigner','InfosController@save');
@@ -36,7 +36,7 @@ Route::get('/panier', 'AchatsController@GetPanier');
 Route::get('/post/{title}','AchatsController@GetSinglepost');
 
 Route::get('/vendre','PostController@GetVente');
-Route::post('submit','PostController@save');
+Route::post('/vendre/submit','PostController@save');
 Route::get('/delete/{id}','PostController@delete');
 Route::get('/edit/{id}','PostController@edit');
 Route::post('edit','PostController@update');

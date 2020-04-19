@@ -25,9 +25,13 @@ class PostController extends Controller
     {
         $post=new Post;
         $post->title= $req->title;
+        $image= $req->file('image');
+        $imagenom= time(). '.' . $image->getClientOriginalExtension();
+        $imagepath = public_path('/images/');
+        $image->move($imagepath,$imagenom);
+        $post->image='/images/'.$imagenom;
         $post->description=$req->description;
         $post->prixFixe=$req->prixFixe;
-
         $post->slug=$req->slug;
         $post->category=$req->category;
         $post->typeVente=$req->typeVente;

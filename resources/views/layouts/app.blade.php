@@ -51,6 +51,12 @@
             display: flex;
             justify-content: center;
         }
+        .flex-right {
+            align-items: center;
+            text-align: right;
+            display: flex;
+            justify-content: center;
+        }
 
         .position-ref {
             position: relative;
@@ -127,7 +133,7 @@
                         <!-- Authentication Links -->
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset(Auth::user()->avatar)}}" class="rounded-circle" style="height:35px;width:35px; margin-right:15px">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 

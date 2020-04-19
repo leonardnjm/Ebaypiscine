@@ -4,10 +4,10 @@
 <html>
 
 <body>
-   @section('title')
-   Ajouter un produit en vente 
-   @stop
-    <form action="submit" method="POST" class="needs-validation" novalidate>
+    @section('title')
+    Ajouter un produit en vente
+    @stop
+    <form action="submit" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
         @csrf
         <br>
         <div classe='form-group'>
@@ -15,6 +15,14 @@
 
 
             <input type="text" class="form-control" name="title" placeholder="Nom de l'article" required>
+            <br><br>
+
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+            </div>
             <br><br>
 
             <input type="text" class="form-control" name="description" placeholder="description" required>
@@ -48,9 +56,9 @@
                 <option>Achat immédiat et Meilleure offre</option>
 
             </select>
-        <br><br>
+            <br><br>
 
-        <button type="submit">vendre</button>
+            <button type="submit">vendre</button>
         </div>
     </form>
 </body>

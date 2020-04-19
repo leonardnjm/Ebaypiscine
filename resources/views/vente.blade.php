@@ -18,7 +18,7 @@ Liste des ventes
     <div class="content">
 
 
-        <div class="container">
+        <div class="container flex-center">
             <br><br>
             <div class="col">
 
@@ -26,6 +26,7 @@ Liste des ventes
                     <thead>
                         <tr>
                             <th scope="col">Titre</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Description</th>
                             <th scope="col">Prix</th>
                             <th scope="col">Categorie</th>
@@ -39,13 +40,14 @@ Liste des ventes
 
                     @foreach($posts as $GetPost)
                     <tr>
-                        <th scope="col">{{ $GetPost->title }}</th>
-                        <td>{{ $GetPost->description }}</td>
-                        <td>{{ $GetPost->prixFixe }}</td>
-                        <td>{{ $GetPost->category }}</td>
-                        <td>{{ $GetPost->typeVente }}</td>
+                        <th class="pt-5" scope="col">{{ $GetPost->title }}</th>
+                        <td><img src="{{asset($GetPost->image)}}" style="height:100px;width:100px; margin-right:15px"></td>
+                        <td class="pt-5">{{ $GetPost->description }}</td>
+                        <td class="pt-5">{{ $GetPost->prixFixe }}</td>
+                        <td class="pt-5">{{ $GetPost->category }}</td>
+                        <td class="pt-5">{{ $GetPost->typeVente }}</td>
 
-                        <td>
+                        <td class="pt-5">
                             <a href="/delete/{{$GetPost->id}}"><i class="fa fa-trash"></i></a>
 
 
