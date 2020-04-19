@@ -23,24 +23,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'InfosController@GetInfo');
 Route::post('/profile','InfosController@save');
-
-//Route::get('/profile','RolesController@GetRole');
-
 Route::post('/profile2','cartebController@save');
 
 Route::view('formulairevente','formulairevente');
 
 Route::get('/post', 'AchatsController@GetPost');
-Route::get('/enchère', 'AchatsController@GetPost');
+//Route::get('/enchère', 'AchatsController@GetPost');
 Route::get('/post/bonpourlemusée', 'AchatsController@GetMusee');
 Route::get('/post/vip', 'AchatsController@GetVip');
 Route::get('/post/ferraille', 'AchatsController@GetFeraille');
+Route::get('/panier', 'AchatsController@GetPanier');
+Route::get('/post/{title}','AchatsController@GetSinglepost');
 
 Route::get('/vendre','PostController@GetVente');
 Route::post('submit','PostController@save');
 Route::get('/delete/{id}','PostController@delete');
 Route::get('/edit/{id}','PostController@edit');
 Route::post('edit','PostController@update');
-
-//Route::get('/post/{title}','PostController@GetSinglepost');
 

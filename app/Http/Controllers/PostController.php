@@ -12,6 +12,10 @@ use Session;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Create a new controller instance.
      *
@@ -83,29 +87,8 @@ class PostController extends Controller
          return redirect('vendre');
     }
     
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
      
-     public function GetSinglepost()
-    {
-        
-        
-         $posts= Post::all();
-         
-         return view('post', compact('posts'));
-        
-    }     
     
-
-
-
-
-
-
-
-
  /*    function index()
      {
           $posts=DB::table('posts')

@@ -137,6 +137,10 @@
                                     <!--onclick="event.preventDefault();"-->
                                     {{ __('Profile') }}
                                 </a>
+                                <a class="dropdown-item" href="/panier">
+                                    <!--onclick="event.preventDefault();"-->
+                                    {{ __('Panier') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
