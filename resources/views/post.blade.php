@@ -72,7 +72,5 @@ LISTE DES PRODUITS EN VENTE
             </div>
         </div>
 
-
-
-    </div>
+  
     @endsection

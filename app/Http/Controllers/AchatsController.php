@@ -13,15 +13,18 @@ class AchatsController extends Controller
     public function ajout()
     {
         $post=new Post;
-        DB::table('posts')->where('id',$post->id)->update(['panier_id'=>$iduser]);
+        DB::table('posts')->where('id',$post->id_post)->update(['panier_id'=>$iduser]);
         return redirect('post');
     }
     
-    public function GetPost()
+    function GetPost()
     {
-          $posts= Post::all();
-
-         return view('post', compact('posts'));
+            $user_id= Auth::id();
+            $posts= DB::table('posts')
+            ->join('users','posts.user_id','users.id')
+            ->select('posts.*','users.*')
+            ->get();
+        return view('post', compact('posts'));
     }
     
     public function GetPanier()
@@ -52,17 +55,26 @@ class AchatsController extends Controller
 
  public function GetFeraille()
     {
-        
-        
-         $posts= Post::where('category','ferraille ou trésor')->get();
+        $posts= Post::where('category','ferraille ou trésor')->get();
          
-         return view('post', compact('posts'));
-        
+        return view('post', compact('posts'));
     }
     
-    public function GetSinglepost($titre)
+    public function GetSinglepost($title)
     {
-          $post = Post::where('title', $titre)->first();
-         return view('view', compact('post'));
+          $post = DB::table('posts')->where('title',$title)->get();
+         
+          return view('view', compact('post'));
     }
+     
+     public function modifEnchere(Request $prixV)
+     {
+          
+          $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$prixV->prixVariable]);
+          
+         
+     return redirect('/post/{title}');
+     }
+     
+     
 }
