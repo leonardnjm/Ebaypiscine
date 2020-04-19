@@ -27,14 +27,14 @@ Profile
 </script>
 
 <div class="row flex-center">
-    <div class="pb-4 col-md-3">
+    <div class="pb-4 pr-3 col-md-3">
         <div class="list-group" id="list-tab" role="tablist">
             <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Profile</a>
             <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Information Personnelle</a>
             <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Payement</a>
         </div>
     </div>
-    <div class="pb-4 col-md-9">
+    <div class="py-4 px-5 col-md-9 border">
         <div class="tab-content flex-center" id="nav-tabContent">
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                <div class="row">
@@ -74,7 +74,7 @@ Profile
                 <div class="row flex-center">
                     <form action="forminfo" method="POST" class="needs-validation" novalidate>
                         @csrf
-                        <div class="form-row">
+                        <div class="form-row px-3">
                             <div class="col-lg-5 mb-3">
                                 <label for="adresse">Adresse</label>
                                 <input type="text" class="form-control" name="adresse" required>
@@ -120,7 +120,7 @@ Profile
                 <div class="row flex-center">
                     <form action="carteb" method="post" class="needs-validation" novalidate>
                         @csrf
-                        <div class="form-row">
+                        <div class="form-row px-3">
                             <div class="col-lg-6 mb-2">
                                 <label for="numeroCarte">Numéro de la carte</label>
                                 <input type="text" class="form-control" name="numeroCarte" required>
