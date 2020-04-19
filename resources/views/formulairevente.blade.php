@@ -33,8 +33,7 @@
             <input type="number" class="form-control" name="prixFixe" placeholder="Prix fixe de l'article" required>
             <br><br>
 
-            <input type="text" class="form-control" name="slug" placeholder="slug" required>
-            <br><br>
+     
             <label for="category">Catégorie de l'object</label>
             <select class="custom-select" name="category" required>
                 <option selected disabled value="">--Choisir--</option>
@@ -46,16 +45,54 @@
 
             <br><br>
 
+            <style>
+        body, select {
+            font:14px Verdana;
+           
+        }
+    </style>
+<body>
+    <div>
+        Type de vente: <br>
+        <select id="sel" onchange="updateCheckBox(this)">
+            <option>-- Select --</option>
+            <option value="Vente">Vente immediate</option>
+            <option value="Enchere">Enchere</option>
+        </select>
+        <p>
+            <input type="checkbox" name="offer" disabled="disabled" id="chk1" /> Prix negociable <br />
+            
+        </p>
+    </div>
 
-            <label for="typeVente">Type de Vente</label>
-            <select class="custom-select" name="typeVente" required>
-                <option selected disabled value="">--Choisir--</option>
-                <option>Meilleure Offre</option>
-                <option>Achat immédiat</option>
-                <option>Enchere</option>
-                <option>Achat immédiat et Meilleure offre</option>
+    <div id="div" 
+        style="margin-top:10px;display:block;color:green;">
+    </div>
+</body>
 
-            </select>
+<script>
+    function updateCheckBox(opts) {
+        var chks = document.getElementsByName("offer");
+
+        if (opts.value == 'Vente') {
+            for (var i = 0; i <= chks.length - 1; i++) {
+                chks[i].disabled = false;
+                document.getElementById('div').innerHTML = 'Checkboxes enabled';
+                document.getElementById('div').innerHTML='OtherR: <input type="text" name="other" />';
+                
+            }
+        }
+        else if (opts.value == 'Enchere') {
+            for (var i = 0; i <= chks.length - 1; i++) {
+                chks[i].disabled = true;
+                chks[i].checked = false;
+                document.getElementById('div').innerHTML = 'Checkboxes disabled and unchecked';
+                 document.getElementById('div').innerHTML='OtherR: <input type="text" name="other" />';
+            }
+        }
+        else document.getElementById('div').innerHTML='';
+    }
+</script>
             <br><br>
 
             <button type="submit">vendre</button>
