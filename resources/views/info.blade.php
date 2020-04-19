@@ -34,7 +34,7 @@ Profile
             <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Payement</a>
         </div>
     </div>
-    <div class="py-4 px-5 col-md-9 border">
+    <div class="py-4 px-5 col-md-9 rounded border border-secondary">
         <div class="tab-content flex-center" id="nav-tabContent">
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                <div class="row">
