@@ -60,9 +60,21 @@ class AchatsController extends Controller
         
     }
     
-    public function GetSinglepost($titre)
+    public function GetSinglepost($title)
     {
-          $post = Post::where('title', $titre)->first();
-         return view('view', compact('post'));
+          $post = DB::table('posts')->where('title',$title)->get();
+         
+          return view('view', compact('post'));
     }
+     
+     public function modifEnchere(Request $prixV)
+     {
+          
+          $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$prixV->prixVariable]);
+          
+         
+     return redirect('/post/{title}');
+     }
+     
+     
 }
