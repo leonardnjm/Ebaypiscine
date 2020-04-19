@@ -77,12 +77,7 @@ class PostController extends Controller
     public function update(Request $req)
     {
         $id_post=$req->id_post;
-        $post= DB::table('posts')->where('id_post',$id_post)->get();
-        $post->title= $req->title;
-        $post->description=$req->description;
-        $post->prixFixe=$req->prixFixe;
-        $post->category=$req->category;
-        $post->typeVente=$req->typeVente;
+        $post= DB::table('posts')->where('id_post',$id_post)->update(['title'=>$req->title,'description'=>$req->description,'prixFixe'=>$req->prixFixe,'category'=>$req->category,'typeVente'=>$req->typeVente]);
                 Session::flash('status', 'Votre item a été modifié');
          return redirect('vendre');
     }     

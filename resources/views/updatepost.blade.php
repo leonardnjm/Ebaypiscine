@@ -6,20 +6,20 @@
 	<br>
 	<h1>Renseignez les informations à modifier</h1>
 	<div classe ='form-group'>
-<!--		@foreach($data as $NewPost)-->
+		@foreach($data as $NewPost)
 	
-	<input type="hidden" name="id_post" value="{{$data->id_post}}" >
+	<input type="hidden" name="id_post" value="{{$NewPost->id_post}}" >
 
-	<input type="text" name="title"value="{{$data->title}}" placeholder="Nom de l'article">
+	<input type="text" name="title"value="{{$NewPost->title}}" placeholder="Nom de l'article">
 	<br>
 
-	<input type="text" name="description"value="{{$data->description}}" placeholder="description">
+	<input type="text" name="description"value="{{$NewPost->description}}" placeholder="description">
 	<br>
 
 
 
-	<input type="number" name="prixFixe"value="{{$data->prixFixe}}" placeholder="Prix fixe de l'article">
-<!--	@endforeach-->
+	<input type="number" name="prixFixe"value="{{$NewPost->prixFixe}}" placeholder="Prix fixe de l'article">
+	@endforeach
 	<br>
   	<label for="category">Catégorie de l'object</label>
                         <select class="custom-select" name="category" required>
