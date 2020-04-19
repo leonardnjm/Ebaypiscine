@@ -22,13 +22,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'InfosController@GetInfo');
-Route::post('/profile','InfosController@save');
-Route::post('/profile2','cartebController@save');
+Route::post('renseigner','InfosController@save');
+Route::post('carte','cartebController@save');
 
-Route::view('formulairevente','formulairevente');
+Route::view('/vendre/formulairevente','formulairevente');
 
 Route::get('/post', 'AchatsController@GetPost');
-//Route::get('/enchère', 'AchatsController@GetPost');
+Route::get('/enchère', 'AchatsController@GetPost');
 Route::get('/post/bonpourlemusée', 'AchatsController@GetMusee');
 Route::get('/post/vip', 'AchatsController@GetVip');
 Route::get('/post/ferraille', 'AchatsController@GetFeraille');

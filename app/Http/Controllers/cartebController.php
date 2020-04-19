@@ -21,7 +21,7 @@ class cartebController extends Controller
         $carte->dateExpiration=$req->dateExpiration;
         $carte->crypto=$req->crypto;
         $carte->save();
-         return redirect('profile');
+         return redirect('/profile');
     }
      
      
