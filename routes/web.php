@@ -37,7 +37,7 @@ Route::get('/post/{title}','AchatsController@GetSinglepost');
 
 Route::get('/vendre','PostController@GetVente');
 Route::post('/vendre/submit','PostController@save');
-Route::get('/delete/{id}','PostController@delete');
-Route::get('/edit/{id}','PostController@edit');
+Route::get('/delete/{id_post}','PostController@delete');
+Route::get('/edit/{id_post}','PostController@edit');
 Route::post('edit','PostController@update');
 

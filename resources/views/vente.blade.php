@@ -48,10 +48,10 @@ Liste des ventes
                         <td class="pt-5">{{ $GetPost->typeVente }}</td>
 
                         <td class="pt-5">
-                            <a href="/delete/{{$GetPost->id}}"><i class="fa fa-trash"></i></a>
+                            <a href="/delete/{{$GetPost->id_post}}"><i class="fa fa-trash"></i></a>
 
 
-                            <a href="/edit/{{$GetPost->id}}"><i class="fa fa-edit"></i></a>
+                            <a href="/edit/{{$GetPost->id_post}}"><i class="fa fa-edit"></i></a>
 
                         </td>
 

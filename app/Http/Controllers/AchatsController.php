@@ -14,7 +14,7 @@ class AchatsController extends Controller
     {
         $post=new Post;
         DB::table('posts')->where('id',$post->id)->update(['panier_id'=>$iduser]);
-        return redirect('acheter');
+        return redirect('post');
     }
     
     public function GetPost()
