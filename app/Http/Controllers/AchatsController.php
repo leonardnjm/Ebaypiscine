@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\Achat;
+use App\Post;
 use App\User;
 
 class AchatsController extends Controller
@@ -62,7 +62,7 @@ class AchatsController extends Controller
     
     public function GetSinglepost($titre)
     {
-          $post = Achat::where('title', $titre)->first();
+          $post = Post::where('title', $titre)->first();
          return view('view', compact('post'));
     }
 }
