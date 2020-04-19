@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Role;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -67,15 +70,18 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if(request()->has('avatar')){
+            $role= new Role;
             $avatar= request()->file('avatar');
             $avatarnom= time(). '.' . $avatar->getClientOriginalExtension();
             $avatarpath = public_path('/images/');
             $avatar->move($avatarpath,$avatarnom);
+            $iduser=Auth::id();
             return User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'avatar' => '/images/'.$avatarnom,
+                'role_id' => $role->id,
             ]);
         }
         return User::create([
