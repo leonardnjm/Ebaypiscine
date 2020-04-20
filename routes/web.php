@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/vendeur/{id}', 'InfosController@Add');
 
 Route::get('/','PostController@GetAll');
 
@@ -34,7 +35,7 @@ Route::get('/panier', 'AchatsController@GetPanier');
 Route::get('/panier/payement', 'AchatsController@PrixTotal');
 Route::get('/post/{title}','AchatsController@GetSinglepost');
 Route::post('/post/{title}','AchatsController@modifEnchere');
-Route::post('/post/offres/{title}','AchatsController@modifNego');
+Route::post('/post/offres/{title}/{nbNego}','AchatsController@modifNego');
 Route::post('/post/offre/{title}','AchatsController@save');
 Route::get('/post/offres/{title}','AchatsController@GetOffre');
 
@@ -45,9 +46,12 @@ Route::post('/vendre/submit','PostController@save');
 Route::get('/delete/{id_post}','PostController@delete');
 Route::get('/supprimer/{id}','PostController@deleteUser');
 Route::get('/edit/{id_post}','PostController@edit');
-Route::get('/modifier/{id}','PostController@editUser');
+Route::get('/{id}','PostController@editUser');
 Route::post('edit','PostController@update');
-Route::post('modifier','PostController@updateUser');
+Route::post('/modifier/{id}','PostController@updateUser');
+Route::get('admin','PostController@GetAdmin');
+
+
 
 //Route::get('post','AchatsController@timer');
 

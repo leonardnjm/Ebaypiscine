@@ -47,9 +47,11 @@
     <div class="tab-content" id="nav-tabContent">
     
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="flex-center mt-5">
+            <div class="flex-center mt-5 mr-5">
                 <h3>Dernière enchère : {{ $GetPost->prixVariable }}</h3>
+                <br>
             </div>
+                <h3>Par {{ $GetPost->name }}</h3>
             <div class="flex-center mt-3">
                 <form action="{{url('post/')}}/{{ $GetPost->title }}" method="POST" class="form-inline">
                     @csrf
@@ -75,12 +77,13 @@
             <div class="flex-center mt-5">
                 <form action="{{url('post/offre/')}}/{{ $GetPost->title }}" method="post">
                     @csrf
-                    <div class="form-group mx-sm-2 mb-2 ">
+                    <div class="form-group mx-sm-2 mb-2 "> 
                         <label for="prixNego" class="sr-only">Négocier</label>
                         <input type="number" class="form-control" name="prixNego" placeholder="Votre Offre" required>
                     </div>
-                    <button type="submit" class="btn btn-primary mb-2">Créer une offre</button>
-    
+                    
+                     <button type="submit"  class="btn btn-primary mb-2">Créer une offre</button>
+                 
                 </form>
             </div>
         </div>

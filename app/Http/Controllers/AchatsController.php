@@ -46,17 +46,30 @@ class AchatsController extends Controller
     
      function modifEnchere(Request $req, $title)
      {
+         $valeur=Post::select('prixVariable')->where('title',$title)->get();
+         if($valeur < $req->prixVariable){
           $user_id=Auth::id();
           $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$req->prixVariable,'user_e'=>$user_id]);         
-            return redirect('/post/'.$title);
+            return redirect('/post/'.$title);}
+         else {return redirect('/post/'.$title);}
+         
      }
     
-    function modifNego(Request $req, $title)
+    function modifNego(Request $req, $title,$nbNego)
      {
-          $user_id=Auth::id();
+          if($nbNego %2 ==0 && $nbNego<10)
+          {
+         $user_id=Auth::id();
+         
           $offresincre= DB::table('offres')->increment('nbNego');
-          $offre= DB::table('offres')->where('post_title',$title)->update(['prixNego'=>$req->prixNego]);         
+          $offre= DB::table('offres')->where('post_title',$title)->update(['prixNego'=>$req->prixNego]); 
+         
             return redirect('/post/offres/'.$title);
+               }
+         else
+         {
+          return redirect('/post/offres/'.$title);
+              }
      }
     
      function save(request $req,$title)
@@ -121,18 +134,13 @@ class AchatsController extends Controller
     
     public function GetSinglepost($title)
     {
-          $post = DB::table('posts')->where('title',$title)->get();
+          $post = DB::table('posts')
+              ->join('users','posts.user_id','users.id')
+              ->where('title',$title)->get();
          
           return view('view', compact('post'));
     }
      
      
-//     function timer()
-//     {
-////          $to= DB:table('posts')->;
-//          $from =Carbon::tomorrow();
-////          $diff_in_hours = $to->diffInHours($from);
-//             
-//}
      
 }

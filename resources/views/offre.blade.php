@@ -45,7 +45,7 @@
             <div class="flex-center mt-5">
                  <h3>Dernière enchère : {{ $GetPost->prixNego }}</h3>
                
-            <form action="{{url('post/offres/')}}/{{ $GetPost->title }}" method="post">
+            <form action="{{url('post/offres/')}}/{{ $GetPost->title }}/{{ $GetPost->nbNego }}" method="post">
                 @csrf
                 <div class="form-group mx-sm-2 mb-2 ">
                     <label for="prixNego" class="sr-only">Négocier</label>
