@@ -11,6 +11,12 @@
 @section('content')
 
 <div>
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+</script>
 
     <div class="row ">
    @foreach($posts as $GetPost)
@@ -58,6 +64,8 @@
         </div>
     </div>
 </div>
+
+
 @endforeach
 
 @endsection
