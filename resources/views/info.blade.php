@@ -38,11 +38,11 @@ Profile
         <div class="tab-content flex-center" id="nav-tabContent">
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                <div class="row">
-                  <div class="col-md-5">
-                      <img src="{{asset(Auth::user()->avatar)}}" style="height:250px;width:250px; margin-right:30px">
+                  <div class="col-md-5 pr-5">
+                      <img src="{{asset(Auth::user()->avatar)}}" class="rounded" style="height:250px;width:250px; margin-right:30px">
                       
                   </div>
-                   <div class="col-md-7">
+                   <div class="col-md-7 pl-5">
                       @if(Session::get('status'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{Session::get('status')}}
@@ -69,7 +69,7 @@ Profile
                         <br>
                         <span>Créée le {{ $GetInfo->created_at }}</span>
                         <br>
-                        <form action="{{url('/vendeur')}}/{{ $GetInfo->id }}"><button class="btn btn-secondary btn-block" type="submit">Devenir Vendeur</button></form>
+                        <form action="{{url('/vendeur')}}/{{ $GetInfo->id }}"><button class="btn btn-dark btn-block" type="submit">Devenir Vendeur</button></form>
                         
                         @endforeach
                     </div>
@@ -114,7 +114,7 @@ Profile
                                 <label for="description">Description</label>
                                 <textarea name="description" class="form-control" placeholder="Décrivez-vous en quelque mots." required></textarea>
                             </div>
-                            <button class="btn btn-secondary btn-block" type="submit">Enregistrer</button>
+                            <button class="btn btn-dark btn-block" type="submit">Enregistrer</button>
                         </div>
                     </form>
 
@@ -144,7 +144,7 @@ Profile
                                 <label for="crypto">crypto</label>
                                 <input type="text" class="form-control" name="crypto" required>
                             </div>
-                            <button class="btn btn-secondary btn-block" type="submit">Enregistrer les informations de paiement</button>
+                            <button class="btn btn-dark btn-block" type="submit">Enregistrer les informations de paiement</button>
                         </div>
                     </form>
                 </div>

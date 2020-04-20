@@ -41,7 +41,7 @@ Liste des ventes
                     @foreach($posts as $GetPost)
                     <tr>
                         <th class="pt-5" scope="col">{{ $GetPost->title }}</th>
-                        <td><img src="{{asset($GetPost->image)}}" style="height:100px;width:100px; margin-right:15px"></td>
+                        <td><img src="{{asset($GetPost->image)}}" class="rounded" style="height:100px;width:100px; margin-right:15px"></td>
                         <td class="pt-5">{{ $GetPost->description }}</td>
                         <td class="pt-5">{{ $GetPost->prixFixe }}{{ $GetPost->prixMax }}</td>
                         <td class="pt-5">{{ $GetPost->category }}</td>
