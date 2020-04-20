@@ -176,6 +176,7 @@
                 </div>
             </div>
         </nav>
+            @yield('home')
 
         <main class="pt--5">
             <header class="title p-5 text-center flex-center  ">

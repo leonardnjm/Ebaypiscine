@@ -41,9 +41,14 @@ Règlement
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-success btn-lg btn-block">
-                    Payer Maintenant   <span class="glyphicon glyphicon-chevron-right"></span>
-                </button>
+                <form action="suppression" method="POST">
+                   @csrf
+                    <div class="flex-center">
+                        <button type="submit" class="btn btn-success btn-lg btn-block">
+                            Payer Maintenant   <span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

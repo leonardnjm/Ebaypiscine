@@ -43,6 +43,10 @@ Profile
                       
                   </div>
                    <div class="col-md-7">
+                      @if(Session::get('status'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{Session::get('status')}}
+                         @endif
                        @foreach($role as $GetRole)
                         <span>Vous êtes un {{ $GetRole->role }}</span>
                         <br>

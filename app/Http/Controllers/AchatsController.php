@@ -97,6 +97,16 @@ class AchatsController extends Controller
         return view('panier', compact('posts'));
     }
     
+    function suppression()
+    {
+        $user_id= Auth::id();
+         $posts= DB::table('posts')
+            ->where('posts.panier_id', $user_id)
+            ->select('posts.*','users.*')
+            ->delete();
+        return redirect('/');
+    }
+    
     function PrixTotal()
     {
         $user_id=Auth::id();
