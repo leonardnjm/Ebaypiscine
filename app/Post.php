@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //
-    protected $table='posts';
+    public $table='posts';
     public $timestamps=true;
 }

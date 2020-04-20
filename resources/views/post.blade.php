@@ -39,38 +39,40 @@ LISTE DES PRODUITS EN VENTE
                 <div class="container">
                     <br><br>
                     <div class="col">
-                        
-                            @foreach($posts as $GetPost)
 
-                            <div class="card px-3 mb-3" style="max-width: auto;">
-                                <div class="row">
-                                        <img src="{{asset($GetPost->image)}}" style="height:100px;width:100px; margin-right:15px" class="img-fluid p-2">
-                                        <div class="media-body pl-5 pt-3 col">
-                                            <h4 class="card-title">{{ $GetPost->title }}</h4>
-                                            <p class="card-text">{{ mb_strimwidth($GetPost->description,0,30,'...')}}</p>
-                                            <p class="card-text">{{ $GetPost->name}}</p>
-                                            <p class="card-text text-right"><small class="text-muted">{{$GetPost->created_at}}</small></p>
+                        @foreach($posts as $GetPost)
 
-
-                                        </div>
-                                        <div class="pt-4 mt-3 pr-3">
-                                            <h4 class="vertical-align:right;"><strong>{{$GetPost->prixFixe}} €</strong></h4>
-                                        </div>
-                                    </div>
-                                    <a href="/post/{{ $GetPost->title }}" class="stretched-link"></a>
+                        <div class="card px-3 mb-3" style="max-width: auto;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="{{asset($GetPost->image)}}" class="img-fluid p-2">
                                 </div>
-                            @endforeach
+                                <div class="media-body pl-5 pt-3 col-md-7">
+                                    <h4 class="card-title">{{ $GetPost->title }}</h4>
+                                    <p class="card-text">{{ mb_strimwidth($GetPost->description,0,30,'...')}}</p>
+                                    <p class="card-text">{{ $GetPost->name}}</p>
+                                    <p class="card-text text-right"><small class="text-muted">{{$GetPost->created_at}}</small></p>
+
+
+                                </div>
+                                <div class="pt-4 mt-3 pr-3 col-md-2">
+                                    <h4 class="vertical-align:right;"><strong>{{$GetPost->prixFixe}} €</strong></h4>
+                                </div>
                             </div>
-
-
-
-
+                            <a href="/post/{{ $GetPost->title }}" class="stretched-link"></a>
                         </div>
-
+                        @endforeach
                     </div>
+
+
+
+
                 </div>
+
             </div>
         </div>
+    </div>
+</div>
 
-  
-    @endsection
+
+@endsection

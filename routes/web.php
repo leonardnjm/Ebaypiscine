@@ -34,6 +34,8 @@ Route::get('/panier', 'AchatsController@GetPanier');
 Route::get('/panier/payement', 'AchatsController@PrixTotal');
 Route::get('/post/{title}','AchatsController@GetSinglepost');
 Route::post('/post/{title}','AchatsController@modifEnchere');
+Route::post('/post/offre/{title}','AchatsController@save');
+Route::get('/post/offres/{title}','AchatsController@GetOffre');
 
 Route::get('/vendre','PostController@GetVente');
 Route::post('/vendre/submit','PostController@save');

@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\User;
+use App\Offre;
 
 class AchatsController extends Controller
-{    
+{        
     public function ajout($title)
     {
         $user_id= Auth::id();
@@ -20,12 +21,48 @@ class AchatsController extends Controller
     function GetPost()
     {
             $user_id= Auth::id();
+        $offres= DB::table('offres')
+            ->join('posts','offres.post_id','posts.id_post')
+            ->get();
             $posts= DB::table('posts')
             ->join('users','posts.user_id','users.id')
             ->select('posts.*','users.*')
             ->get();
-        return view('post', compact('posts'));
+        return view('post', compact('posts','offres'));
     }
+    
+    function GetOffre()
+    {
+            $user_id= Auth::id();
+        $offres= DB::table('offres')
+            ->join('posts','offres.post_id','posts.id_post')
+            ->get();
+            $posts= DB::table('posts')
+            ->join('users','posts.user_id','users.id')
+            ->select('posts.*','users.*')
+            ->get();
+        return view('post', compact('posts','offres'));
+    }
+    
+     function modifEnchere(Request $req, $title)
+     {
+          $user_id=Auth::id();
+          $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$req->prixVariable,'user_e'=>$user_id]);         
+            return redirect('/post/'.$title);
+     }
+    
+     function save(request $req,$title)
+     {
+         $offre= new Offre;
+         $user=Auth::id();
+         $offre->prixNego=$req->prixNego;
+         $offre->save();
+         $offre=DB::table('offres')->orderBy('offres.id', 'desc')->first();
+         $offre_id=$offre->id;
+         $post_id= DB::table('posts')->where('title',$title)->select('id_post')->get();
+         $offres = DB::table('offres')->where('id',$offre_id)->update(['user_id'=>$user,'post_title'=>$title]);
+        return redirect('/post/offres/'.$title);
+     }
     
     public function GetPanier()
     {
@@ -80,15 +117,6 @@ class AchatsController extends Controller
           return view('view', compact('post'));
     }
      
-     function modifEnchere(Request $req, $title)
-     {
-          
-          $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$req->prixVariable]);
-//          $newpost= DB::table('posts')->get();
-//          print_r($title);
-         
-            return redirect('/post/'.$title);
-     }
      
      
 }
