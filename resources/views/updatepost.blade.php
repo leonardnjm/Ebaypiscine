@@ -7,14 +7,14 @@
 	<h1>Renseignez les informations à modifier</h1>
 	<div classe ='form-group'>
 		@foreach($data as $NewPost)
-	
+	<br><br>
 	<input type="hidden" name="id_post" value="{{$NewPost->id_post}}" >
-
+	<br><br>
 	<input type="text" name="title"value="{{$NewPost->title}}" placeholder="Nom de l'article">
-	<br>
+	<br><br>
 
 	<input type="text" name="description"value="{{$NewPost->description}}" placeholder="description">
-	<br>
+	<br><br>
 
 
 

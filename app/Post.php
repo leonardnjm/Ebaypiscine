@@ -8,5 +8,5 @@ class Post extends Model
 {
     //
     protected $table='posts';
-    public $timestamps=false;
+    public $timestamps=true;
 }

@@ -25,9 +25,9 @@ class CreatePostsTable extends Migration
             $table->string('image')->nullable();
             $table->text('meta_keywords');
             $table->string('typeVente');
-             $table->integer('prixVariable');
-             $table->integer('prixFixe');
-             $table->integer('prixMax');
+             $table->integer('prixVariable')->nullable();
+             $table->integer('prixFixe')->nullable();
+             $table->integer('prixMax')->nullable();
             $table->boolean('featured')->default(0);
              $table->string('aricleVendu')->default('non');
             $table->timestamps();

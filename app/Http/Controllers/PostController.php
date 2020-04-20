@@ -32,9 +32,11 @@ class PostController extends Controller
         $post->image='/images/'.$imagenom;
         $post->description=$req->description;
         $post->prixFixe=$req->prixFixe;
+        $post->prixMax=$req->prixMax;
         $post->category=$req->category;
          $id_post= $post->id_post;
-        //$post->typeVente=$req->typeVente;
+
+        $post->typeVente=$req->typeVente;
         $post->save();
         $req->session()->flash('status', 'Votre item a été ajouté');
          $iduser=Auth::id();

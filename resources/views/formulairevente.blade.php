@@ -30,8 +30,8 @@
 
 
 
-            <input type="number" class="form-control" name="prixFixe" placeholder="Prix fixe de l'article" required>
-            <br><br>
+
+        
 
      
             <label for="category">Catégorie de l'object</label>
@@ -54,13 +54,15 @@
 <body>
     <div>
         Type de vente: <br>
-        <select id="sel" onchange="updateCheckBox(this)">
+        <select name="typeVente"  onchange="updateCheckBox(this)">
             <option>-- Select --</option>
-            <option value="Vente">Vente immediate</option>
-            <option value="Enchere">Enchere</option>
+            <option value="Vente immediate">Vente immediate</option>
+            <option value="Enchère">Enchere</option>
+            <option value="Vente négociable">Vente négociable</option>
+            <option value="Enchère et vente immédiate">Enchere et vente immédiate</option>
+             
         </select>
-        <p>
-            <input type="checkbox" name="offer" disabled="disabled" id="chk1" /> Prix negociable <br />
+
             
         </p>
     </div>
@@ -72,24 +74,35 @@
 
 <script>
     function updateCheckBox(opts) {
-        var chks = document.getElementsByName("offer");
+        var chks = document.getElementsByName("typeVente");
 
-        if (opts.value == 'Vente') {
-            for (var i = 0; i <= chks.length - 1; i++) {
-                chks[i].disabled = false;
-                document.getElementById('div').innerHTML = 'Checkboxes enabled';
-                document.getElementById('div').innerHTML='OtherR: <input type="text" name="other" />';
+        if (opts.value == 'Vente immediate') {
+           
                 
-            }
+                document.getElementById('div').innerHTML = 'Checkboxes enabled';
+                document.getElementById('div').innerHTML='Prix fixe: <input type="text" name="prixFixe" />';
+
+                
+            
         }
-        else if (opts.value == 'Enchere') {
-            for (var i = 0; i <= chks.length - 1; i++) {
-                chks[i].disabled = true;
-                chks[i].checked = false;
-                document.getElementById('div').innerHTML = 'Checkboxes disabled and unchecked';
-                 document.getElementById('div').innerHTML='OtherR: <input type="text" name="other" />';
-            }
+        else if (opts.value == 'Vente négociable') {
+            
+            document.getElementById('div').innerHTML = 'Checkboxes enabled';
+            document.getElementById('div').innerHTML='Prix négociable: <input type="number" name="prixMax" />';
+        
+            
         }
+        else if (opts.value == 'Enchère et vente immédiate') {
+
+            
+                
+               
+               document.getElementById('div').innerHTML = 'Checkboxes enabled';
+                 document.getElementById('div').innerHTML='Prix fixe: <input type="text" name="Prixfixe" />';
+         
+            
+        }
+         
         else document.getElementById('div').innerHTML='';
     }
 </script>
