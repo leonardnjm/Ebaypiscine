@@ -75,12 +75,13 @@
             <div class="flex-center mt-5">
                 <form action="{{url('post/offre/')}}/{{ $GetPost->title }}" method="post">
                     @csrf
-                    <div class="form-group mx-sm-2 mb-2 ">
+                    <div class="form-group mx-sm-2 mb-2 "> 
                         <label for="prixNego" class="sr-only">Négocier</label>
                         <input type="number" class="form-control" name="prixNego" placeholder="Votre Offre" required>
                     </div>
-                    <button type="submit" class="btn btn-primary mb-2">Créer une offre</button>
-    
+                    
+                     <button type="submit"  class="btn btn-primary mb-2">Créer une offre</button>
+                 
                 </form>
             </div>
         </div>

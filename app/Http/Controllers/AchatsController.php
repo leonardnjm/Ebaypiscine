@@ -51,12 +51,21 @@ class AchatsController extends Controller
             return redirect('/post/'.$title);
      }
     
-    function modifNego(Request $req, $title)
+    function modifNego(Request $req, $title,$nbNego)
      {
-          $user_id=Auth::id();
+          if($nbNego %2 ==0 && $nbNego<10)
+          {
+         $user_id=Auth::id();
+         
           $offresincre= DB::table('offres')->increment('nbNego');
-          $offre= DB::table('offres')->where('post_title',$title)->update(['prixNego'=>$req->prixNego]);         
+          $offre= DB::table('offres')->where('post_title',$title)->update(['prixNego'=>$req->prixNego]); 
+         
             return redirect('/post/offres/'.$title);
+               }
+         else
+         {
+          return redirect('/post/offres/'.$title);
+              }
      }
     
      function save(request $req,$title)
@@ -127,12 +136,5 @@ class AchatsController extends Controller
     }
      
      
-//     function timer()
-//     {
-////          $to= DB:table('posts')->;
-//          $from =Carbon::tomorrow();
-////          $diff_in_hours = $to->diffInHours($from);
-//             
-//}
      
 }

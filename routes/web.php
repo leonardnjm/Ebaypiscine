@@ -34,7 +34,7 @@ Route::get('/panier', 'AchatsController@GetPanier');
 Route::get('/panier/payement', 'AchatsController@PrixTotal');
 Route::get('/post/{title}','AchatsController@GetSinglepost');
 Route::post('/post/{title}','AchatsController@modifEnchere');
-Route::post('/post/offres/{title}','AchatsController@modifNego');
+Route::post('/post/offres/{title}/{nbNego}','AchatsController@modifNego');
 Route::post('/post/offre/{title}','AchatsController@save');
 Route::get('/post/offres/{title}','AchatsController@GetOffre');
 
@@ -48,6 +48,8 @@ Route::get('/edit/{id_post}','PostController@edit');
 Route::get('/modifier/{id}','PostController@editUser');
 Route::post('edit','PostController@update');
 Route::post('modifier','PostController@updateUser');
+
+
 
 //Route::get('post','AchatsController@timer');
 
