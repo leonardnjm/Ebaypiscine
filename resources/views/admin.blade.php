@@ -121,7 +121,7 @@ Administration
                                 <td class="pt-5">
                                     <a href="/supprimer/{{$GetUser->id}}"><i class="fa fa-trash"></i></a>
                                     
-                                    <a href="/modifier/{{$GetPost->id}}"><i class="fa fa-edit"></i></a>
+                                    <a href="/modifier/{{$GetUser->id}}"><i class="fa fa-edit"></i></a>
 
                                 </td>
 
