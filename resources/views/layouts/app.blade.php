@@ -27,7 +27,7 @@
     <style>
         html,
         body {
-            background-color: #ffffff;
+/*            background-image: url('https://cdn.wallpapersafari.com/89/10/jgPiO3.jpg');*/
             color: #414141;
             font-family: 'Nunit!o', sans-serif;
             font-weight: 200;

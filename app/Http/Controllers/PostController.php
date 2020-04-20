@@ -40,7 +40,6 @@ class PostController extends Controller
         $req->session()->flash('status', 'Votre item a été ajouté');
          $iduser=Auth::id();
          DB::table('posts')->where('title',$post->title)->update(['user_id'=>$iduser]);
-//         print_r($id_post);
          return redirect('vendre');
     }
   

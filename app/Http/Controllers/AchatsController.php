@@ -67,13 +67,14 @@ class AchatsController extends Controller
           return view('view', compact('post'));
     }
      
-     public function modifEnchere(Request $prixV)
+     function modifEnchere(Request $req, $title)
      {
           
-          $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$prixV->prixVariable]);
-          
+          $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$req->prixVariable]);
+//          $newpost= DB::table('posts')->get();
+//          print_r($title);
          
-     return redirect('/post/{title}');
+            return redirect('/post/'.$title);
      }
      
      
