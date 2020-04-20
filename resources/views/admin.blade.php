@@ -37,6 +37,7 @@ Administration
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <th scope="col">Vendeur</th>
                                     <th scope="col">Titre</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Description</th>
@@ -52,7 +53,8 @@ Administration
 
                             @foreach($posts as $GetPost)
                             <tr>
-                                <th class="pt-5" scope="col">{{ $GetPost->title }}</th>
+                                <th class="pt-5" scope="col">{{ $GetPost->name }}</th>
+                                <th class="pt-5">{{ $GetPost->title }}</th>
                                 <td><img src="{{asset($GetPost->image)}}" style="height:100px;width:100px; margin-right:15px"></td>
                                 <td class="pt-5">{{ $GetPost->description }}</td>
                                 <td class="pt-5">{{ $GetPost->prixFixe }}{{ $GetPost->prixMax }}</td>
@@ -118,6 +120,8 @@ Administration
 
                                 <td class="pt-5">
                                     <a href="/supprimer/{{$GetUser->id}}"><i class="fa fa-trash"></i></a>
+                                    
+                                    <a href="/modifier/{{$GetPost->id}}"><i class="fa fa-edit"></i></a>
 
                                 </td>
 

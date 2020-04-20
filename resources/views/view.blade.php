@@ -40,7 +40,7 @@
     
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Acheter imédiatement</a>
     
-            <a class="nav-item nav-link disabled" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Négocier prix</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Négocier prix</a>
         </div>
     </nav>
     
@@ -73,8 +73,8 @@
     
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <div class="flex-center mt-5">
-                <form action="{{url('post/offre/')}}/{{ $GetPost->title }}">
-                    @csrf_field
+                <form action="{{url('post/offre/')}}/{{ $GetPost->title }}" method="post">
+                    @csrf
                     <div class="form-group mx-sm-2 mb-2 ">
                         <label for="prixNego" class="sr-only">Négocier</label>
                         <input type="number" class="form-control" name="prixNego" placeholder="Votre Offre" required>

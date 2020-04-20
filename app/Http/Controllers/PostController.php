@@ -73,15 +73,7 @@ class PostController extends Controller
             ->join('users','posts.user_id','users.id')
             ->select('posts.*','users.*')
             ->get();
-        print_r($posts);
         return view('admin', compact('posts','user'));
-    }
-    
-    function GetUsers()
-    {
-            
-//        print_r($user);
-        return view('admin', compact('user'));
     }
     
     public function delete($id_post)
@@ -104,13 +96,25 @@ class PostController extends Controller
         return view('updatepost',['data'=>$data]);
     }
 
-     
-
     public function update(Request $req)
     {
         $id_post=$req->id_post;
         $post= DB::table('posts')->where('id_post',$id_post)->update(['title'=>$req->title,'description'=>$req->description,'prixFixe'=>$req->prixFixe,'category'=>$req->category,'typeVente'=>$req->typeVente]);
                 Session::flash('status', 'Votre item a été modifié');
          return redirect('vendre');
+    }     
+
+     public function editUser($id){
+
+        $data=DB::table('posts')->where('id_post',$id)->get();
+        return view('updateuser',['data'=>$data]);
+    }
+    
+    public function updateUser(Request $req)
+    {
+        $id_user=Auth::id();
+        $user= DB::table('users')->where('id',$id_user)->update(['role'=>$req->role]);
+                Session::flash('status', 'Votre item a été modifié');
+         return redirect('admin');
     }     
 }

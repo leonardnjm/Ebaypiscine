@@ -32,17 +32,15 @@ class AchatsController extends Controller
         return view('post', compact('posts','offres'));
     }
     
-    function GetOffre()
+    function GetOffre($title)
     {
             $user_id= Auth::id();
-        $offres= DB::table('offres')
-            ->join('posts','offres.post_id','posts.id_post')
-            ->get();
             $posts= DB::table('posts')
             ->join('users','posts.user_id','users.id')
-            ->select('posts.*','users.*')
+            ->join('offres','posts.title','offres.post_title')
+            ->where('posts.title',$title)
             ->get();
-        return view('post', compact('posts','offres'));
+        return view('offre', compact('posts'));
     }
     
      function modifEnchere(Request $req, $title)
@@ -50,6 +48,14 @@ class AchatsController extends Controller
           $user_id=Auth::id();
           $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$req->prixVariable,'user_e'=>$user_id]);         
             return redirect('/post/'.$title);
+     }
+    
+    function modifNego(Request $req, $title)
+     {
+          $user_id=Auth::id();
+          $offresincre= DB::table('offres')->increment('nbNego');
+          $offre= DB::table('offres')->where('post_title',$title)->update(['prixNego'=>$req->prixNego]);         
+            return redirect('/post/offres/'.$title);
      }
     
      function save(request $req,$title)
@@ -62,6 +68,7 @@ class AchatsController extends Controller
          $offre_id=$offre->id;
          $post_id= DB::table('posts')->where('title',$title)->select('id_post')->get();
          $offres = DB::table('offres')->where('id',$offre_id)->update(['user_id'=>$user,'post_title'=>$title]);
+         
         return redirect('/post/offres/'.$title);
      }
     
