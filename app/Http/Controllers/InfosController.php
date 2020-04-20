@@ -29,6 +29,7 @@ class InfosController extends Controller
     function Add($id)
     {
         Auth::user()->where('id',$id)->update(['role'=>'AAA']);
+        Session::flash('status', 'Votre demande a été effectuée. Attendez un Admin va la confirme');
         return redirect('/profile');
     }
     

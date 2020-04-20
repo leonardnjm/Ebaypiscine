@@ -32,6 +32,7 @@ Route::get('/post/vip', 'AchatsController@GetVip');
 Route::get('/post/ferraille', 'AchatsController@GetFeraille');
 Route::get('/post/ajout/{title}', 'AchatsController@ajout');
 Route::get('/panier', 'AchatsController@GetPanier');
+Route::get('supprimer', 'AchatsController@suppression');
 Route::get('/panier/payement', 'AchatsController@PrixTotal');
 Route::get('/post/{title}','AchatsController@GetSinglepost');
 Route::post('/post/{title}','AchatsController@modifEnchere');
