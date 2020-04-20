@@ -175,7 +175,7 @@
         </nav>
 
         <main class="pt--5">
-            <header class="title text-center flex-center p-5 ">
+            <header class="title p-5 text-center flex-center  ">
                 @yield('title')
             </header>
             <div class="p-5">@yield('content')</div>

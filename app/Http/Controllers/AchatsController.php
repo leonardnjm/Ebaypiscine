@@ -37,6 +37,19 @@ class AchatsController extends Controller
             ->get();
         return view('panier', compact('posts'));
     }
+    
+    function PrixTotal()
+    {
+        $user_id=Auth::id();
+        $prixF= DB::table('posts')
+            ->where('panier_id', $user_id)
+            ->sum('prixFixe');
+        $prixV= DB::table('posts')
+            ->where('panier_id', $user_id)
+            ->sum('prixVariable');
+        $prix=$prixF + $prixV;
+        return view('payer', compact('prix'));
+    }
 
  public function GetMusee()
     {    

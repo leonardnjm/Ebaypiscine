@@ -39,7 +39,7 @@
 
         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Acheter imédiatement</a>
 
-        <a class="nav-item nav-link disabled" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Négotier prix</a>
+        <a class="nav-item nav-link disabled" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Négocier prix</a>
     </div>
 </nav>
 
@@ -62,7 +62,24 @@
         </div>
     </div>
 
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <form action="{{url('post/ajout')}}/{{ $GetPost->title }}">
+            <div class="flex-center mt-5">
+                <button type="submit" class="btn btn-primary mb-2">Ajouter au panier</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <form action="{{url('post/neo')}}/{{ $GetPost->title }}">
+            @csrf
+            <div class="form-group mx-sm-2 mb-2 ">
+                <label for="prixNego" class="sr-only">Négocier</label>
+                <input type="number" class="form-control" name="prixNego" placeholder="Nouveau prix d'enchère" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Confirmer</button>
+        </form>
+    </div>
 </div>
 @endforeach
 
