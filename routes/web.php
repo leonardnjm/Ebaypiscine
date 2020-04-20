@@ -43,3 +43,5 @@ Route::get('/delete/{id_post}','PostController@delete');
 Route::get('/edit/{id_post}','PostController@edit');
 Route::post('edit','PostController@update');
 
+Route::get('post','AchatsController@timer');
+

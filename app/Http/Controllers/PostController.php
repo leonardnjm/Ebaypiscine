@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\User;
 use Session;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -23,6 +24,9 @@ class PostController extends Controller
      */
      function save(Request $req)
     {
+          
+        $date = Carbon::now()->addHours(8)->format('Y-m-d H:i:s');
+          
         $post=new Post;
         $post->title= $req->title;
         $image= $req->file('image');
@@ -35,6 +39,7 @@ class PostController extends Controller
         $post->prixMax=$req->prixMax;
         $post->category=$req->category;
          $id_post= $post->id_post;
+         $post->finEnchere= $date;
         $post->typeVente=$req->typeVente;
         $post->save();
         $req->session()->flash('status', 'Votre item a été ajouté');

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\User;
 use App\Offre;
+use Carbon\Carbon;
 
 class AchatsController extends Controller
 {        
@@ -118,5 +119,12 @@ class AchatsController extends Controller
     }
      
      
+     function timer()
+     {
+          $to= DB:table('posts')->;
+          $from =Carbon::tomorrow();
+          $diff_in_hours = $to->diffInHours($from);
+             
+}
      
 }

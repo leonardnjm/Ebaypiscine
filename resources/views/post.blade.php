@@ -16,7 +16,6 @@ LISTE DES PRODUITS EN VENTE
 <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Ahouter a panier">local_mall</i>
 
 
-
 <div class="row">
     <div class="col-2 bg-light">
         <style>

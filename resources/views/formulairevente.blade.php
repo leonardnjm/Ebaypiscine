@@ -9,7 +9,7 @@ Ajouter un produit en vente
     <br>
     <div classe="form-group ">
 
-
+        
 
         <div class="row rounded border border-secondary p-5">
             <div class="col-md-6">
@@ -57,11 +57,12 @@ Ajouter un produit en vente
                 </select>
 
             </div>
-
+                 
             <div id="div" class="mt-5">
             </div>
 
-            <br><br>
+            <br>
+            <br>
 
             <div class="col-12 mt-5 flex-center">
                <br>
@@ -86,14 +87,18 @@ Ajouter un produit en vente
 
         if (opts.value == 'Vente immediate') {
             document.getElementById('div').innerHTML = '<input class="form-control" type="number" name="prixFixe" placeholder="Prix" />';
-
-
-
-        } else if (opts.value == 'Vente négociable') {
+          } 
+         
+        /* else if (opts.value == 'Enchère') {
+            document.getElementById('div').innerHTML = 'Entrez date de la fin de enchere: <input class="form-control" type="datetime-local" value="2020-04-20T13:45:00" name="finEnchere"/>';
+         }  */
+         
+         else if (opts.value == 'Vente négociable') {
             document.getElementById('div').innerHTML = 'Prix négociable: <input class="form-control" type="number" name="prixMax" placeholder="Prix"/>';
-
-
-        } else if (opts.value == 'Enchère et vente immédiate') {
+          } 
+         
+         
+         else if (opts.value == 'Enchère et vente immédiate') {
             document.getElementById('div').innerHTML = 'Prix fixe: <input class="form-control" type="number" name="Prixfixe" placeholder="Prix"/>';
 
 
