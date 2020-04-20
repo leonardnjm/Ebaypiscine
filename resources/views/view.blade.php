@@ -47,8 +47,9 @@
     <div class="tab-content" id="nav-tabContent">
     
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="flex-center mt-5">
+            <div class="flex-center mt-5 mr-5">
                 <h3>Dernière enchère : {{ $GetPost->prixVariable }}</h3>
+                <h3>Par {{ $GetPost->name }}</h3>
             </div>
             <div class="flex-center mt-3">
                 <form action="{{url('post/')}}/{{ $GetPost->title }}" method="POST" class="form-inline">

@@ -45,9 +45,10 @@ Route::post('/vendre/submit','PostController@save');
 Route::get('/delete/{id_post}','PostController@delete');
 Route::get('/supprimer/{id}','PostController@deleteUser');
 Route::get('/edit/{id_post}','PostController@edit');
-Route::get('/modifier/{id}','PostController@editUser');
+Route::get('/{id}','PostController@editUser');
 Route::post('edit','PostController@update');
-Route::post('modifier','PostController@updateUser');
+Route::post('/modifier/{id}','PostController@updateUser');
+Route::post('/modifier/{id}','PostController@GetAdmin');
 
 //Route::get('post','AchatsController@timer');
 

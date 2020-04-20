@@ -46,9 +46,12 @@ class AchatsController extends Controller
     
      function modifEnchere(Request $req, $title)
      {
+         $valeur=Post::select('prixVariable')->where('title',$title)-get();
+         if($valeur > $req->prixVariable){
           $user_id=Auth::id();
           $post= DB::table('posts')->where('title',$title)->update(['prixVariable'=>$req->prixVariable,'user_e'=>$user_id]);         
-            return redirect('/post/'.$title);
+            return redirect('/post/'.$title);}
+         
      }
     
     function modifNego(Request $req, $title)
