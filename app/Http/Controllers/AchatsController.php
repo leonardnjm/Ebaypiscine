@@ -39,6 +39,7 @@ class AchatsController extends Controller
             ->join('users','posts.user_id','users.id')
             ->join('offres','posts.title','offres.post_title')
             ->where('posts.title',$title)
+            ->where('offres.user_id',$user_id)
             ->get();
         return view('offre', compact('posts'));
     }
