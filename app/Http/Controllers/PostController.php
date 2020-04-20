@@ -63,6 +63,15 @@ class PostController extends Controller
             ->get();
         return view('vente', compact('posts'));
     }
+    function GetAll()
+    {
+        $user_id= Auth::id();
+        $user= DB::table('users')
+            ->where('users.id', $user_id)
+            ->get();
+           
+        return view('welcome', compact('user'));
+    }
     
     function GetAdmin()
     {

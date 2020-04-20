@@ -13,11 +13,11 @@ LISTE DES PRODUITS EN VENTE
 
 </script>
 
-<i class="material-icons" data-toggle="tooltip" data-placement="top" title="Ahouter a panier">local_mall</i>
+
 
 
 <div class="row">
-    <div class="col-2 bg-light">
+    <div class="col-3 bg-light">
         <style>
             #link {
                 color: #414141;
@@ -26,8 +26,8 @@ LISTE DES PRODUITS EN VENTE
         </style>
 
         <a id="link" href="/post">Tout</a> <br><br>
-        <a id="link" href="/post/bonpourlemusée">Bon pour le musée</a><br>
-        <a id="link" href="/post/vip">Vip </a><br>
+        <a id="link" href="/post/bonpourlemusée">Bon pour le musée</a><br><br>
+        <a id="link" href="/post/vip">Vip </a><br><br>
         <a id="link" href="/post/ferraille">Ferraille </a>
     </div>
 
