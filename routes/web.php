@@ -34,7 +34,7 @@ Route::get('/post/vip', 'AchatsController@GetVip');
 Route::get('/post/ferraille', 'AchatsController@GetFeraille');
 Route::get('/panier', 'AchatsController@GetPanier');
 Route::get('/post/{title}','AchatsController@GetSinglepost');
-Route::post('enchere','AchatsController@modifEnchere');
+Route::post('/enchere','AchatsController@modifEnchere');
 
 Route::get('/vendre','PostController@GetVente');
 Route::post('/vendre/submit','PostController@save');

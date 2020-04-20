@@ -45,7 +45,8 @@
             <input type="text" readonly class="form-control-plaintext" id="prixaentrer" value="Prix:">
         </div>
 
-        <form action="enchere" method="post" class="form-inline">
+        <form action="/enchere" method="POST" class="form-inline" >
+           {{ csrf_field() }}
             <div class="form-group mx-sm-2 mb-2">
                 <label for="prixVariable" class="sr-only">prixVariable</label>
                 <input type="number" class="form-control" name="prixVariable" placeholder="Nouveau prix a encherir">

@@ -35,7 +35,6 @@ class PostController extends Controller
         $post->prixMax=$req->prixMax;
         $post->category=$req->category;
          $id_post= $post->id_post;
-
         $post->typeVente=$req->typeVente;
         $post->save();
         $req->session()->flash('status', 'Votre item a été ajouté');
