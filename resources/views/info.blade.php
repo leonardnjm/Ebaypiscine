@@ -39,7 +39,7 @@ Profile
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                <div class="row">
                   <div class="col-md-5">
-                      <img src="{{asset(Auth::user()->avatar)}}" style="height:100px;width:100px; margin-right:15px">
+                      <img src="{{asset(Auth::user()->avatar)}}" style="height:250px;width:250px; margin-right:30px">
                       
                   </div>
                    <div class="col-md-7">
@@ -65,7 +65,8 @@ Profile
                         <br>
                         <span>Créée le {{ $GetInfo->created_at }}</span>
                         <br>
-                        <button action="{{url('vendeur')}}/{{ $GetPost->name }}" class="btn btn-secondary btn-block" type="submit">Devenir Vendeur</button>
+                        <form action="{{url('/vendeur')}}/{{ $GetInfo->id }}"><button class="btn btn-secondary btn-block" type="submit">Devenir Vendeur</button></form>
+                        
                         @endforeach
                     </div>
                 </div>

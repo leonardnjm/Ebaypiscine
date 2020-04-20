@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/vendeur/{id}', 'InfosController@Add');
 Route::get('/profile', 'InfosController@GetInfo');
 Route::post('renseigner','InfosController@save');
 Route::post('carte','cartebController@save');

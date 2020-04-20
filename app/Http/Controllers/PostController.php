@@ -72,6 +72,7 @@ class PostController extends Controller
             $posts= DB::table('posts')
             ->join('users','posts.user_id','users.id')
             ->select('posts.*','users.*')
+            ->orderBy('role')
             ->get();
         return view('admin', compact('posts','user'));
     }

@@ -26,6 +26,12 @@ class InfosController extends Controller
         return redirect('/profile');
     }
     
+    function Add($id)
+    {
+        Auth::user()->where('id',$id)->update(['role'=>'AAA']);
+        return redirect('/profile');
+    }
+    
     function GetInfo()
     {
             $user_id= Auth::id();
