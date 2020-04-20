@@ -38,8 +38,9 @@ Route::post('/post/offres/{title}','AchatsController@modifNego');
 Route::post('/post/offre/{title}','AchatsController@save');
 Route::get('/post/offres/{title}','AchatsController@GetOffre');
 
-Route::get('/admin','PostController@GetAdmin');
-Route::get('/vendre','PostController@GetVente');
+Route::get('/admin','PostController@GetAdmin')->name('admin')->middleware('admin');
+Route::get('/vendre','PostController@GetVente')->name('vendeur')->middleware('vendeur');
+
 Route::post('/vendre/submit','PostController@save');
 Route::get('/delete/{id_post}','PostController@delete');
 Route::get('/supprimer/{id}','PostController@deleteUser');
