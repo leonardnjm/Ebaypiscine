@@ -29,6 +29,7 @@ Route::get('/post', 'AchatsController@GetPost');
 Route::get('/post/bonpourlemusée', 'AchatsController@GetMusee');
 Route::get('/post/vip', 'AchatsController@GetVip');
 Route::get('/post/ferraille', 'AchatsController@GetFeraille');
+Route::get('/post/{title}', 'AchatsController@ajout');
 Route::get('/panier', 'AchatsController@GetPanier');
 Route::get('/post/{title}','AchatsController@GetSinglepost');
 Route::post('/post/{title}','AchatsController@modifEnchere');

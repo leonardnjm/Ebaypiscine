@@ -10,11 +10,11 @@ use App\User;
 
 class AchatsController extends Controller
 {    
-    public function ajout()
+    public function ajout($title)
     {
-        $post=new Post;
-        DB::table('posts')->where('id',$post->id_post)->update(['panier_id'=>$iduser]);
-        return redirect('post');
+        $user_id= Auth::id();
+        DB::table('posts')->where('title',$title)->update(['panier_id'=>$user_id]);
+        return redirect('/post/'.$title);
     }
     
     function GetPost()
