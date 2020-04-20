@@ -119,12 +119,12 @@ class AchatsController extends Controller
     }
      
      
-     function timer()
-     {
-          $to= DB:table('posts')->;
-          $from =Carbon::tomorrow();
-          $diff_in_hours = $to->diffInHours($from);
-             
-}
+//     function timer()
+//     {
+////          $to= DB:table('posts')->;
+//          $from =Carbon::tomorrow();
+////          $diff_in_hours = $to->diffInHours($from);
+//             
+//}
      
 }

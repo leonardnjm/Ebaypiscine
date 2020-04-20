@@ -127,6 +127,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/vendre">{{ __('vendre') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">{{ __('Page Admin') }}</a>
+                        </li>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

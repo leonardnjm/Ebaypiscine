@@ -64,11 +64,38 @@ class PostController extends Controller
         return view('vente', compact('posts'));
     }
     
+    function GetAdmin()
+    {
+            $user_id= Auth::id();
+        $user= DB::table('users')
+            ->get();
+            $posts= DB::table('posts')
+            ->join('users','posts.user_id','users.id')
+            ->select('posts.*','users.*')
+            ->get();
+        print_r($posts);
+        return view('admin', compact('posts','user'));
+    }
+    
+    function GetUsers()
+    {
+            
+//        print_r($user);
+        return view('admin', compact('user'));
+    }
+    
     public function delete($id_post)
     {
         Post::where('id_post',$id_post)->delete();
         Session::flash('status', 'Votre item a été supprimé');
         return redirect('vendre');
+    }
+    
+    public function deleteUser($id)
+    {
+        User::where('id',$id)->delete();
+        Session::flash('status', 'ce profil a été supprimé ');
+        return redirect('admin');
     }
     
     public function edit($id_post){

@@ -37,11 +37,13 @@ Route::post('/post/{title}','AchatsController@modifEnchere');
 Route::post('/post/offre/{title}','AchatsController@save');
 Route::get('/post/offres/{title}','AchatsController@GetOffre');
 
+Route::get('/admin','PostController@GetAdmin');
 Route::get('/vendre','PostController@GetVente');
 Route::post('/vendre/submit','PostController@save');
 Route::get('/delete/{id_post}','PostController@delete');
+Route::get('/supprimer/{id}','PostController@deleteUser');
 Route::get('/edit/{id_post}','PostController@edit');
 Route::post('edit','PostController@update');
 
-Route::get('post','AchatsController@timer');
+//Route::get('post','AchatsController@timer');
 

@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
              $table->integer('post_id')->unsigned();
              $table->foreign('post_id')->references('id')->on('posts');
-            
+            $table->string('role')->default('acheteur');
              $table->integer('panier_id')->unsigned();
              $table->foreign('panier_id')->references('id')->on('paniers');
             $table->rememberToken();
