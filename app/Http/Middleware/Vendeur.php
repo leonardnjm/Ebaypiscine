@@ -18,7 +18,7 @@ class Vendeur
     {
          
               if (Auth::user()->role == 'ADMIN') {
-            return redirect()->route('admin');
+            return back();
         }
          
                 if (Auth::user()->role == 'Vendeur') {
