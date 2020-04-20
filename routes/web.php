@@ -48,7 +48,7 @@ Route::get('/edit/{id_post}','PostController@edit');
 Route::get('/{id}','PostController@editUser');
 Route::post('edit','PostController@update');
 Route::post('/modifier/{id}','PostController@updateUser');
-Route::post('/modifier/{id}','PostController@GetAdmin');
+Route::get('admin','PostController@GetAdmin');
 
 //Route::get('post','AchatsController@timer');
 

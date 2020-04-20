@@ -114,7 +114,6 @@ class PostController extends Controller
     {
         $user= DB::table('users')->where('id',$id)->update(['role'=>$req->role]);
                 Session::flash('status', 'Votre item a été modifié');
-        print_r($user);
-//         return redirect('admin');
+         return redirect('admin');
     }     
 }
