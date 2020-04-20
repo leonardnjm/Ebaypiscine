@@ -4,7 +4,6 @@
 LISTE DES PRODUITS EN VENTE
 @stop
 @section('content')
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script>
     $(document).ready(function() {
@@ -17,18 +16,18 @@ LISTE DES PRODUITS EN VENTE
 
 
 <div class="row">
-    <div class="col-3 bg-light">
+    <div class="col-2 bg-light rounded">
         <style>
             #link {
                 color: #414141;
             }
 
         </style>
-
-        <a id="link" href="/post">Tout</a> <br><br>
-        <a id="link" href="/post/bonpourlemusée">Bon pour le musée</a><br><br>
-        <a id="link" href="/post/vip">Vip </a><br><br>
-        <a id="link" href="/post/ferraille">Ferraille </a>
+    
+        <br><br><a id="link" href="/post" class="text-monospace  font-weight-bold text-center">  Tout</a> <br><br>
+        <a id="link" href="/post/bonpourlemusée" class="text-monospace text-center">Bon pour le musée</a><br><br>
+        <a id="link" href="/post/vip" class="text-monospace text-center">Vip </a><br><br>
+        <a id="link" href="/post/ferraille" class="text-monospace text-center">Ferraille </a>
     </div>
 
     <div class="col">
@@ -50,12 +49,14 @@ LISTE DES PRODUITS EN VENTE
                                     <h4 class="card-title">{{ $GetPost->title }}</h4>
                                     <p class="card-text">{{ mb_strimwidth($GetPost->description,0,30,'...')}}</p>
                                     <p class="card-text">{{ $GetPost->name}}</p>
-                                    <p class="card-text text-right"><small class="text-muted">{{$GetPost->created_at}}</small></p>
+                                    <p class="card-text text-right"><small class="text-muted">Il reste 6h pour cette enchere</small></p>
 
 
                                 </div>
                                 <div class="pt-4 mt-3 pr-3 col-md-2">
-                                    <h4 class="vertical-align:right;"><strong>{{$GetPost->prixFixe}} €</strong></h4>
+                                   
+                                    <h4 class="vertical-align:right;"><strong>{{$GetPost->prixFixe}} {{$GetPost->prixVariable}}
+                                    {{$GetPost->prixMax}}€</strong></h4>
                                 </div>
                             </div>
                             <a href="/post/{{ $GetPost->title }}" class="stretched-link"></a>

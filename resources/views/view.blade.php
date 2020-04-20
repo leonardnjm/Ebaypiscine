@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div>
     <div class="row ">
@@ -25,6 +25,8 @@
             <div class="col-12">
                 {{$GetPost->description}}
                 <br><br>
+                {{$GetPost->typeVente}}
+                <br>
             </div>
     
             <div class="col-12 my-3 flex-center">
@@ -46,6 +48,7 @@
     
     <div class="tab-content" id="nav-tabContent">
     
+       
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="flex-center mt-5 mr-5">
                 <h3>Dernière enchère : {{ $GetPost->prixVariable }}</h3>
@@ -55,7 +58,7 @@
             <div class="flex-center mt-3">
                 <form action="{{url('post/')}}/{{ $GetPost->title }}" method="POST" class="form-inline">
                     @csrf
-                    <div class="form-group mx-sm-2 mb-2 ">
+                       <div class="form-group mx-sm-2 mb-2 ">
                         <label for="prixVariable" class="sr-only">prix Variable</label>
                         <input type="number" class="form-control" name="prixVariable" placeholder="Nouveau prix d'enchère" required>
                     </div>
@@ -65,10 +68,13 @@
             </div>
         </div>
     
+     
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-contact-tab">
             <form action="{{url('post/ajout')}}/{{ $GetPost->title }}">
                 <div class="flex-center mt-5">
+                    <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Ahouter a panier">local_mall</i>
                     <button type="submit" class="btn btn-primary mb-2">Ajouter au panier</button>
+                    <i class="material-icons" data-toggle="tooltip" data-placement="top" title="Ahouter a panier">local_mall</i>
                 </div>
             </form>
         </div>
