@@ -30,8 +30,9 @@ class CreatePostsTable extends Migration
              $table->integer('prixMax')->nullable();
             $table->boolean('featured')->default(0);
              $table->string('aricleVendu')->default('non');
+            $table->dateTime('finEnchere');
             $table->timestamps();
-
+            
         });
     }
 

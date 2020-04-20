@@ -21,6 +21,7 @@ class CreateOffresTable extends Migration
               $table->foreign('post_id')->references('id')->on('posts');
                $table->integer('nbNego');
              $table->string('statutArticle');
+            $table->integer('prixNego')->nullable();
             $table->timestamps();
         });
     }
