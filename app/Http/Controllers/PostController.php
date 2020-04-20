@@ -106,14 +106,13 @@ class PostController extends Controller
 
      public function editUser($id){
 
-        $data=DB::table('posts')->where('id_post',$id)->get();
+        $data=DB::table('users')->where('id',$id)->get();
         return view('updateuser',['data'=>$data]);
     }
     
-    public function updateUser(Request $req)
+    public function updateUser(Request $req, $id)
     {
-        $id_user=Auth::id();
-        $user= DB::table('users')->where('id',$id_user)->update(['role'=>$req->role]);
+        $user= DB::table('users')->where('id',$id)->update(['role'=>$req->role]);
                 Session::flash('status', 'Votre item a été modifié');
          return redirect('admin');
     }     

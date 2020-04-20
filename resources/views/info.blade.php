@@ -65,7 +65,7 @@ Profile
                         <br>
                         <span>Créée le {{ $GetInfo->created_at }}</span>
                         <br>
-                       
+                        <button action="{{url('vendeur')}}/{{ $GetPost->name }}" class="btn btn-secondary btn-block" type="submit">Devenir Vendeur</button>
                         @endforeach
                     </div>
                 </div>

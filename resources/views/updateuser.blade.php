@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="/modifier" method="POST">
+@foreach($data as $GetData)
+<form action="{{url('/modifier/')}}/{{ $GetData->id }}" method="POST">
     @csrf
     <br>
     <h1>Modifier le statut</h1>
@@ -19,3 +20,4 @@
         </div>
     </div>
 </form>
+@endforeach
