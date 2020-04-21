@@ -23,11 +23,21 @@ LISTE DES PRODUITS EN VENTE
             }
 
         </style>
-    
-        <br><br><a id="link" href="/post" class="text-monospace  font-weight-bold text-center">  Tout</a> <br><br>
-        <a id="link" href="/post/bonpourlemusée" class="text-monospace text-center">Bon pour le musée</a><br><br>
-        <a id="link" href="/post/vip" class="text-monospace text-center">Vip </a><br><br>
-        <a id="link" href="/post/ferraille" class="text-monospace text-center">Ferraille </a>
+
+       <div class="row pt-4">
+             <div class="col-12 m-1 flex-center ">
+                <button class="btn btn-block btn btn-warning"><a id="link" href="/post" class="text-monospace  font-weight-bold text-center"> Tout</a> </button><br><br>
+            </div>
+            <div class="col-12 m-1 flex-center">
+            <button class="btn btn-block btn-warning">
+                <a id="link" href="/post/bonpourlemusée" class="text-monospace text-center">Musée</a></button></div>
+                <div class="col-12 m-1 flex-center">
+            <button class="btn btn-block btn-warning">
+                <a id="link" href="/post/vip" class="text-monospace text-center">Vip </a></button></div>
+                <div class="col-12 m-1 flex-center">
+            <button class="btn btn-block btn-warning">
+                <a id="link" href="/post/ferraille" class="text-monospace text-center">Ferraille </a></button></div>
+        </div>
     </div>
 
     <div class="col">
@@ -54,9 +64,9 @@ LISTE DES PRODUITS EN VENTE
 
                                 </div>
                                 <div class="pt-4 mt-3 pr-3 col-md-2">
-                                   
+
                                     <h4 class="vertical-align:right;"><strong>{{$GetPost->prixFixe}} {{$GetPost->prixVariable}}
-                                    {{$GetPost->prixMax}}€</strong></h4>
+                                            {{$GetPost->prixMax}}€</strong></h4>
                                 </div>
                             </div>
                             <a href="/post/{{ $GetPost->title }}" class="stretched-link"></a>

@@ -54,7 +54,6 @@
                 <h3>Dernière enchère : {{ $GetPost->prixVariable }}</h3>
                 <br>
             </div>
-                <h3>Par {{ $GetPost->name }}</h3>
             <div class="flex-center mt-3">
                 <form action="{{url('post/')}}/{{ $GetPost->title }}" method="POST" class="form-inline">
                     @csrf

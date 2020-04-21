@@ -42,7 +42,7 @@ class LoginController extends Controller
                 break;
            
             default:
-                $this->redirectTo = RouteServiceProvider::HOME;
+                $this->redirectTo = '/';
                 return $this->redirectTo;
         }
      }

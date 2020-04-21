@@ -5,7 +5,7 @@ Administration
 @endsection
 @section('content')
 
-<nav>
+<nav class="ml-5">
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Objet en vente</a>
 
@@ -34,7 +34,7 @@ Administration
                     <br><br>
                     <div class="col">
 
-                        <table class="table">
+                        <table class="table rounded bg-light">
                             <thead>
                                 <tr>
                                     <th scope="col">Vendeur</th>
@@ -97,7 +97,7 @@ Administration
                     <br><br>
                     <div class="col">
 
-                        <table class="table">
+                        <table class="table rounded bg-light">
                             <thead>
                                 <tr>
                                     <th scope="col">Nom</th>
